@@ -4,33 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>BuildCalcPro - Free Construction Calculators & Tools</title>
-  
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Google Fonts: Inter -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  
-  <!-- FontAwesome Icons for clean accents -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-          },
-          boxShadow: {
-            'card': '0 1px 3px rgba(0, 0, 0, 0.07), 0 1px 2px rgba(0, 0, 0, 0.04)',
-            'card-hover': '0 12px 24px -6px rgba(0, 0, 0, 0.1), 0 4px 8px -2px rgba(0, 0, 0, 0.05)',
-          }
-        }
-      }
-    }
-  </script>
+  <style id="buildcalcpro-local-css">:root{--font-sans:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;--font-mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;--color-brand-orange:#ea580c;--color-brand-orange-bright:#f97316;--color-brand-orange-amber:#fb923c;--color-brand-navy:#0f172a;--color-brand-slate:#334155;--shadow-card:0 1px 3px rgba(0,0,0,.07),0 1px 2px rgba(0,0,0,.04);--shadow-card-hover:0 12px 24px -6px rgba(0,0,0,.1),0 4px 8px -2px rgba(0,0,0,.05);--color-red-50:oklch(97.1% 0.013 17.38);--color-red-100:oklch(93.6% 0.032 17.717);--color-red-500:oklch(63.7% 0.237 25.331);--color-orange-50:oklch(98% 0.016 73.684);--color-orange-100:oklch(95.4% 0.038 75.164);--color-orange-200:oklch(90.1% 0.076 70.697);--color-orange-300:oklch(83.7% 0.128 66.29);--color-orange-500:oklch(70.5% 0.213 47.604);--color-orange-600:oklch(64.6% 0.222 41.116);--color-orange-700:oklch(55.3% 0.195 38.402);--color-orange-800:oklch(47% 0.157 37.304);--color-orange-900:oklch(40.8% 0.123 38.172);--color-amber-50:oklch(98.7% 0.022 95.277);--color-amber-100:oklch(96.2% 0.059 95.617);--color-amber-200:oklch(92.4% 0.12 95.746);--color-amber-500:oklch(76.9% 0.188 70.08);--color-amber-700:oklch(55.5% 0.163 48.998);--color-amber-800:oklch(47.3% 0.137 46.201);--color-yellow-50:oklch(98.7% 0.026 102.212);--color-yellow-100:oklch(97.3% 0.071 103.193);--color-emerald-50:oklch(97.9% 0.021 166.113);--color-emerald-500:oklch(69.6% 0.17 162.48);--color-emerald-600:oklch(59.6% 0.145 163.225);--color-teal-50:oklch(98.4% 0.014 180.72);--color-teal-100:oklch(95.3% 0.051 180.801);--color-sky-50:oklch(97.7% 0.013 236.62);--color-sky-100:oklch(95.1% 0.026 236.824);--color-sky-600:oklch(58.8% 0.158 241.966);--color-blue-50:oklch(97% 0.014 254.604);--color-blue-500:oklch(62.3% 0.214 259.815);--color-blue-600:oklch(54.6% 0.245 262.881);--color-blue-700:oklch(48.8% 0.243 264.376);--color-purple-50:oklch(97.7% 0.014 308.299);--color-purple-500:oklch(62.7% 0.265 303.9);--color-purple-600:oklch(55.8% 0.288 302.321);--color-slate-50:oklch(98.4% 0.003 247.858);--color-slate-100:oklch(96.8% 0.007 247.896);--color-slate-200:oklch(92.9% 0.013 255.508);--color-slate-300:oklch(86.9% 0.022 252.894);--color-slate-400:oklch(70.4% 0.04 256.788);--color-slate-500:oklch(55.4% 0.046 257.417);--color-slate-600:oklch(44.6% 0.043 257.281);--color-slate-700:oklch(37.2% 0.044 257.287);--color-slate-800:oklch(27.9% 0.041 260.031);--color-slate-900:oklch(20.8% 0.042 265.755);--color-slate-950:oklch(12.9% 0.042 264.695);--color-zinc-100:oklch(96.7% 0.001 286.375);--color-zinc-200:oklch(92% 0.004 286.32);--color-stone-100:oklch(97% 0.001 106.424);--color-stone-200:oklch(92.3% 0.003 48.717);--color-white:#fff;--spacing:0.25rem;--container-lg:32rem;--container-xl:36rem;--container-2xl:42rem;--container-3xl:48rem;--container-7xl:80rem;--text-xs:0.75rem;--text-xs--line-height:calc(1 / 0.75);--text-sm:0.875rem;--text-sm--line-height:calc(1.25 / 0.875);--text-base:1rem;--text-base--line-height:calc(1.5 / 1);--text-lg:1.125rem;--text-lg--line-height:calc(1.75 / 1.125);--text-xl:1.25rem;--text-xl--line-height:calc(1.75 / 1.25);--text-2xl:1.5rem;--text-2xl--line-height:calc(2 / 1.5);--text-3xl:1.875rem;--text-3xl--line-height:calc(2.25 / 1.875);--text-4xl:2.25rem;--text-4xl--line-height:calc(2.5 / 2.25);--text-5xl:3rem;--text-5xl--line-height:1;--text-6xl:3.75rem;--text-6xl--line-height:1;--font-weight-medium:500;--font-weight-semibold:600;--font-weight-bold:700;--font-weight-extrabold:800;--font-weight-black:900;--tracking-tight:-0.025em;--tracking-wide:0.025em;--tracking-wider:0.05em;--tracking-widest:0.1em;--leading-tight:1.25;--leading-snug:1.375;--leading-relaxed:1.625;--radius-xl:0.75rem;--radius-2xl:1rem;--radius-3xl:1.5rem;--drop-shadow-sm:0 1px 2px rgb(0 0 0 / 0.15);--blur-sm:8px;--blur-md:12px;--default-transition-duration:150ms;--default-transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);--default-font-family:var(--font-sans);--default-mono-font-family:var(--font-mono);--tw-translate-y:calc(calc(1/2 * 100%) * -1);--tw-space-y-reverse:0;--tw-space-x-reverse:0;--tw-border-style:dashed;--tw-gradient-position:to bottom in oklab;--tw-gradient-from:var(--color-sky-50);--tw-gradient-stops:var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));--tw-gradient-via:var(--color-sky-50);--tw-gradient-via-stops:var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position);--tw-gradient-to:color-mix(in srgb, oklch(98.7% 0.022 95.277) 50%, transparent);--tw-leading:1.12;--tw-shadow:0 25px 50px -12px var(--tw-shadow-color, rgb(0 0 0 / 0.25));--tw-drop-shadow:drop-shadow(var(--drop-shadow-sm));--tw-backdrop-blur:blur(2px);--tw-duration:150ms;--tw-translate-x:calc(var(--spacing) * 1);--tw-scale-x:110%;--tw-scale-y:110%;--tw-ring-shadow:var(--tw-ring-inset,) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);--tw-ring-color:var(--color-orange-500);--tw-gradient-from-position:0%;--tw-gradient-via-position:50%;--tw-gradient-to-position:100%;--tw-shadow-color:initial;--tw-inset-shadow:0 0 #0000;--tw-inset-ring-shadow:0 0 #0000;--tw-ring-inset:initial;--tw-ring-offset-width:0px;--tw-ring-offset-shadow:0 0 #0000;--tw-blur:initial;--tw-brightness:initial;--tw-contrast:initial;--tw-grayscale:initial;--tw-hue-rotate:initial;--tw-invert:initial;--tw-saturate:initial;--tw-sepia:initial;--tw-drop-shadow-color:initial;--tw-backdrop-brightness:initial;--tw-backdrop-contrast:initial;--tw-backdrop-grayscale:initial;--tw-backdrop-hue-rotate:initial;--tw-backdrop-invert:initial;--tw-backdrop-opacity:initial;--tw-backdrop-saturate:initial;--tw-backdrop-sepia:initial;}@layer properties{@supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))){*, ::before, ::after, ::backdrop{--tw-translate-x: 0; --tw-translate-y: 0; --tw-translate-z: 0; --tw-space-y-reverse: 0; --tw-space-x-reverse: 0; --tw-border-style: solid; --tw-gradient-position: initial; --tw-gradient-from: #0000; --tw-gradient-via: #0000; --tw-gradient-to: #0000; --tw-gradient-stops: initial; --tw-gradient-via-stops: initial; --tw-gradient-from-position: 0%; --tw-gradient-via-position: 50%; --tw-gradient-to-position: 100%; --tw-leading: initial; --tw-font-weight: initial; --tw-tracking: initial; --tw-shadow: 0 0 #0000; --tw-shadow-color: initial; --tw-shadow-alpha: 100%; --tw-inset-shadow: 0 0 #0000; --tw-inset-shadow-color: initial; --tw-inset-shadow-alpha: 100%; --tw-ring-color: initial; --tw-ring-shadow: 0 0 #0000; --tw-inset-ring-color: initial; --tw-inset-ring-shadow: 0 0 #0000; --tw-ring-inset: initial; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-offset-shadow: 0 0 #0000; --tw-blur: initial; --tw-brightness: initial; --tw-contrast: initial; --tw-grayscale: initial; --tw-hue-rotate: initial; --tw-invert: initial; --tw-opacity: initial; --tw-saturate: initial; --tw-sepia: initial; --tw-drop-shadow: initial; --tw-drop-shadow-color: initial; --tw-drop-shadow-alpha: 100%; --tw-drop-shadow-size: initial; --tw-backdrop-blur: initial; --tw-backdrop-brightness: initial; --tw-backdrop-contrast: initial; --tw-backdrop-grayscale: initial; --tw-backdrop-hue-rotate: initial; --tw-backdrop-invert: initial; --tw-backdrop-opacity: initial; --tw-backdrop-saturate: initial; --tw-backdrop-sepia: initial; --tw-duration: initial; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scale-z: 1;}}}@layer base{*, ::after, ::before, ::backdrop, ::file-selector-button{box-sizing: border-box; margin: 0; padding: 0; border: 0 solid;} html, :host{line-height: 1.5; -webkit-text-size-adjust: 100%; tab-size: 4; font-family: var(--default-font-family, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"); font-feature-settings: var(--default-font-feature-settings, normal); font-variation-settings: var(--default-font-variation-settings, normal); -webkit-tap-highlight-color: transparent;} hr{height: 0; color: inherit; border-top-width: 1px;} abbr:where([title]){-webkit-text-decoration: underline dotted; text-decoration: underline dotted;} h1, h2, h3, h4, h5, h6{font-size: inherit; font-weight: inherit;} a{color: inherit; -webkit-text-decoration: inherit; text-decoration: inherit;} b, strong{font-weight: bolder;} code, kbd, samp, pre{font-family: var(--default-mono-font-family, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace); font-feature-settings: var(--default-mono-font-feature-settings, normal); font-variation-settings: var(--default-mono-font-variation-settings, normal); font-size: 1em;} small{font-size: 80%;} sub, sup{font-size: 75%; line-height: 0; position: relative; vertical-align: baseline;} sub{bottom: -0.25em;} sup{top: -0.5em;} table{text-indent: 0; border-color: inherit; border-collapse: collapse;} :-moz-focusring{outline: auto;} progress{vertical-align: baseline;} summary{display: list-item;} ol, ul, menu{list-style: none;} img, svg, video, canvas, audio, iframe, embed, object{display: block; vertical-align: middle;} img, video{max-width: 100%; height: auto;} button, input, select, optgroup, textarea, ::file-selector-button{font: inherit; font-feature-settings: inherit; font-variation-settings: inherit; letter-spacing: inherit; color: inherit; border-radius: 0; background-color: transparent; opacity: 1;} :where(select:is([multiple], [size])) optgroup{font-weight: bolder;} :where(select:is([multiple], [size])) optgroup option{padding-inline-start: 20px;} ::file-selector-button{margin-inline-end: 4px;} ::placeholder{opacity: 1;} @supports (not (-webkit-appearance: -apple-pay-button)) or (contain-intrinsic-size: 1px){::placeholder{color: currentcolor; @supports (color: color-mix(in lab, red, red)){color: color-mix(in oklab, currentcolor 50%, transparent);}}} textarea{resize: vertical;} ::-webkit-search-decoration{-webkit-appearance: none;} ::-webkit-date-and-time-value{min-height: 1lh; text-align: inherit;} ::-webkit-datetime-edit{display: inline-flex;} ::-webkit-datetime-edit-fields-wrapper{padding: 0;} ::-webkit-datetime-edit, ::-webkit-datetime-edit-year-field, ::-webkit-datetime-edit-month-field, ::-webkit-datetime-edit-day-field, ::-webkit-datetime-edit-hour-field, ::-webkit-datetime-edit-minute-field, ::-webkit-datetime-edit-second-field, ::-webkit-datetime-edit-millisecond-field, ::-webkit-datetime-edit-meridiem-field{padding-block: 0;} :-moz-ui-invalid{box-shadow: none;} button, input:where([type="button"], [type="reset"], [type="submit"]), ::file-selector-button{appearance: button;} ::-webkit-inner-spin-button, ::-webkit-outer-spin-button{height: auto;} [hidden]:where(:not([hidden="until-found"])){display: none !important;}}@layer utilities{.pointer-events-none{pointer-events: none;} .absolute{position: absolute;} .fixed{position: fixed;} .relative{position: relative;} .sticky{position: sticky;} .inset-0{inset: calc(var(--spacing) * 0);} .inset-x-0{inset-inline: calc(var(--spacing) * 0);} .inset-y-0{inset-block: calc(var(--spacing) * 0);} .top-0{top: calc(var(--spacing) * 0);} .top-1\/2{top: calc(1/2 * 100%);} .top-full{top: 100%;} .right-0{right: calc(var(--spacing) * 0);} .right-2{right: calc(var(--spacing) * 2);} .right-4{right: calc(var(--spacing) * 4);} .bottom-0{bottom: calc(var(--spacing) * 0);} .bottom-5{bottom: calc(var(--spacing) * 5);} .left-0{left: calc(var(--spacing) * 0);} .left-2{left: calc(var(--spacing) * 2);} .left-4{left: calc(var(--spacing) * 4);} .z-0{z-index: 0;} .z-10{z-index: 10;} .z-20{z-index: 20;} .z-40{z-index: 40;} .z-50{z-index: 50;} .mx-auto{margin-inline: auto;} .my-8{margin-block: calc(var(--spacing) * 8);} .mt-1{margin-top: calc(var(--spacing) * 1);} .mt-1\.5{margin-top: calc(var(--spacing) * 1.5);} .mt-2{margin-top: calc(var(--spacing) * 2);} .mt-3{margin-top: calc(var(--spacing) * 3);} .mt-4{margin-top: calc(var(--spacing) * 4);} .mt-6{margin-top: calc(var(--spacing) * 6);} .mt-7{margin-top: calc(var(--spacing) * 7);} .mt-8{margin-top: calc(var(--spacing) * 8);} .mt-12{margin-top: calc(var(--spacing) * 12);} .mb-1\.5{margin-bottom: calc(var(--spacing) * 1.5);} .mb-2{margin-bottom: calc(var(--spacing) * 2);} .mb-2\.5{margin-bottom: calc(var(--spacing) * 2.5);} .mb-3{margin-bottom: calc(var(--spacing) * 3);} .mb-3\.5{margin-bottom: calc(var(--spacing) * 3.5);} .mb-8{margin-bottom: calc(var(--spacing) * 8);} .ml-2{margin-left: calc(var(--spacing) * 2);} .block{display: block;} .flex{display: flex;} .grid{display: grid;} .hidden{display: none;} .inline-flex{display: inline-flex;} .h-1{height: calc(var(--spacing) * 1);} .h-6{height: calc(var(--spacing) * 6);} .h-9{height: calc(var(--spacing) * 9);} .h-10{height: calc(var(--spacing) * 10);} .h-11{height: calc(var(--spacing) * 11);} .h-12{height: calc(var(--spacing) * 12);} .h-14{height: calc(var(--spacing) * 14);} .h-16{height: calc(var(--spacing) * 16);} .h-20{height: calc(var(--spacing) * 20);} .h-full{height: 100%;} .max-h-\[92vh\]{max-height: 92vh;} .min-h-\[430px\]{min-height: 430px;} .min-h-screen{min-height: 100vh;} .w-6{width: calc(var(--spacing) * 6);} .w-9{width: calc(var(--spacing) * 9);} .w-10{width: calc(var(--spacing) * 10);} .w-11{width: calc(var(--spacing) * 11);} .w-12{width: calc(var(--spacing) * 12);} .w-14{width: calc(var(--spacing) * 14);} .w-16{width: calc(var(--spacing) * 16);} .w-24{width: calc(var(--spacing) * 24);} .w-52{width: calc(var(--spacing) * 52);} .w-68{width: calc(var(--spacing) * 68);} .w-full{width: 100%;} .w-max{width: max-content;} .max-w-3xl{max-width: var(--container-3xl);} .max-w-7xl{max-width: var(--container-7xl);} .max-w-\[230px\]{max-width: 230px;} .max-w-full{max-width: 100%;} .max-w-lg{max-width: var(--container-lg);} .max-w-xl{max-width: var(--container-xl);} .min-w-0{min-width: calc(var(--spacing) * 0);} .flex-1{flex: 1;} .shrink-0{flex-shrink: 0;} .-translate-y-1\/2{--tw-translate-y: calc(calc(1/2 * 100%) * -1); translate: var(--tw-translate-x) var(--tw-translate-y);} .translate-y-2{--tw-translate-y: calc(var(--spacing) * 2); translate: var(--tw-translate-x) var(--tw-translate-y);} .cursor-pointer{cursor: pointer;} .grid-cols-1{grid-template-columns: repeat(1, minmax(0, 1fr));} .grid-cols-2{grid-template-columns: repeat(2, minmax(0, 1fr));} .flex-col{flex-direction: column;} .items-center{align-items: center;} .justify-between{justify-content: space-between;} .justify-center{justify-content: center;} .gap-1\.5{gap: calc(var(--spacing) * 1.5);} .gap-2{gap: calc(var(--spacing) * 2);} .gap-2\.5{gap: calc(var(--spacing) * 2.5);} .gap-3{gap: calc(var(--spacing) * 3);} .gap-3\.5{gap: calc(var(--spacing) * 3.5);} .gap-4{gap: calc(var(--spacing) * 4);} .gap-6{gap: calc(var(--spacing) * 6);} .space-y-1\.5{:where(& > :not(:last-child)){--tw-space-y-reverse: 0; margin-block-start: calc(calc(var(--spacing) * 1.5) * var(--tw-space-y-reverse)); margin-block-end: calc(calc(var(--spacing) * 1.5) * calc(1 - var(--tw-space-y-reverse)));}} .space-y-3{:where(& > :not(:last-child)){--tw-space-y-reverse: 0; margin-block-start: calc(calc(var(--spacing) * 3) * var(--tw-space-y-reverse)); margin-block-end: calc(calc(var(--spacing) * 3) * calc(1 - var(--tw-space-y-reverse)));}} .space-y-4{:where(& > :not(:last-child)){--tw-space-y-reverse: 0; margin-block-start: calc(calc(var(--spacing) * 4) * var(--tw-space-y-reverse)); margin-block-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-y-reverse)));}} .space-x-8{:where(& > :not(:last-child)){--tw-space-x-reverse: 0; margin-inline-start: calc(calc(var(--spacing) * 8) * var(--tw-space-x-reverse)); margin-inline-end: calc(calc(var(--spacing) * 8) * calc(1 - var(--tw-space-x-reverse)));}} .self-start{align-self: flex-start;} .truncate{overflow: hidden; text-overflow: ellipsis; white-space: nowrap;} .overflow-hidden{overflow: hidden;} .overflow-x-hidden{overflow-x: hidden;} .overflow-y-auto{overflow-y: auto;} .rounded-2xl{border-radius: var(--radius-2xl);} .rounded-3xl{border-radius: var(--radius-3xl);} .rounded-full{border-radius: calc(infinity * 1px);} .rounded-xl{border-radius: var(--radius-xl);} .border{border-style: var(--tw-border-style); border-width: 1px;} .border-t{border-top-style: var(--tw-border-style); border-top-width: 1px;} .border-b{border-bottom-style: var(--tw-border-style); border-bottom-width: 1px;} .border-dashed{--tw-border-style: dashed; border-style: dashed;} .border-amber-100{border-color: var(--color-amber-100);} .border-amber-200{border-color: var(--color-amber-200);} .border-orange-100{border-color: var(--color-orange-100);} .border-orange-200{border-color: var(--color-orange-200);} .border-red-100{border-color: var(--color-red-100);} .border-sky-100{border-color: var(--color-sky-100);} .border-slate-100{border-color: var(--color-slate-100);} .border-slate-200{border-color: var(--color-slate-200);} .border-slate-200\/80{border-color: color-mix(in srgb, oklch(92.9% 0.013 255.508) 80%, transparent); @supports (color: color-mix(in lab, red, red)){border-color: color-mix(in oklab, var(--color-slate-200) 80%, transparent);}} .border-slate-200\/90{border-color: color-mix(in srgb, oklch(92.9% 0.013 255.508) 90%, transparent); @supports (color: color-mix(in lab, red, red)){border-color: color-mix(in oklab, var(--color-slate-200) 90%, transparent);}} .border-slate-300{border-color: var(--color-slate-300);} .border-stone-200{border-color: var(--color-stone-200);} .border-teal-100{border-color: var(--color-teal-100);} .border-white\/80{border-color: color-mix(in srgb, #fff 80%, transparent); @supports (color: color-mix(in lab, red, red)){border-color: color-mix(in oklab, var(--color-white) 80%, transparent);}} .border-yellow-100{border-color: var(--color-yellow-100);} .border-zinc-200{border-color: var(--color-zinc-200);} .bg-amber-50{background-color: var(--color-amber-50);} .bg-blue-50{background-color: var(--color-blue-50);} .bg-blue-600{background-color: var(--color-blue-600);} .bg-emerald-50{background-color: var(--color-emerald-50);} .bg-emerald-500{background-color: var(--color-emerald-500);} .bg-orange-50{background-color: var(--color-orange-50);} .bg-orange-500{background-color: var(--color-orange-500);} .bg-orange-600{background-color: var(--color-orange-600);} .bg-purple-50{background-color: var(--color-purple-50);} .bg-purple-600{background-color: var(--color-purple-600);} .bg-red-50{background-color: var(--color-red-50);} .bg-red-500{background-color: var(--color-red-500);} .bg-sky-50{background-color: var(--color-sky-50);} .bg-slate-50{background-color: var(--color-slate-50);} .bg-slate-50\/70{background-color: color-mix(in srgb, oklch(98.4% 0.003 247.858) 70%, transparent); @supports (color: color-mix(in lab, red, red)){background-color: color-mix(in oklab, var(--color-slate-50) 70%, transparent);}} .bg-slate-100{background-color: var(--color-slate-100);} .bg-slate-800{background-color: var(--color-slate-800);} .bg-slate-900{background-color: var(--color-slate-900);} .bg-slate-950\/70{background-color: color-mix(in srgb, oklch(12.9% 0.042 264.695) 70%, transparent); @supports (color: color-mix(in lab, red, red)){background-color: color-mix(in oklab, var(--color-slate-950) 70%, transparent);}} .bg-stone-100{background-color: var(--color-stone-100);} .bg-teal-50{background-color: var(--color-teal-50);} .bg-white{background-color: var(--color-white);} .bg-white\/70{background-color: color-mix(in srgb, #fff 70%, transparent); @supports (color: color-mix(in lab, red, red)){background-color: color-mix(in oklab, var(--color-white) 70%, transparent);}} .bg-white\/95{background-color: color-mix(in srgb, #fff 95%, transparent); @supports (color: color-mix(in lab, red, red)){background-color: color-mix(in oklab, var(--color-white) 95%, transparent);}} .bg-yellow-50{background-color: var(--color-yellow-50);} .bg-zinc-100{background-color: var(--color-zinc-100);} .bg-gradient-to-b{--tw-gradient-position: to bottom in oklab; background-image: linear-gradient(var(--tw-gradient-stops));} .bg-gradient-to-l{--tw-gradient-position: to left in oklab; background-image: linear-gradient(var(--tw-gradient-stops));} .bg-gradient-to-r{--tw-gradient-position: to right in oklab; background-image: linear-gradient(var(--tw-gradient-stops));} .bg-gradient-to-t{--tw-gradient-position: to top in oklab; background-image: linear-gradient(var(--tw-gradient-stops));} .from-sky-50{--tw-gradient-from: var(--color-sky-50); --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));} .from-sky-100{--tw-gradient-from: var(--color-sky-100); --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));} .from-sky-100\/80{--tw-gradient-from: color-mix(in srgb, oklch(95.1% 0.026 236.824) 80%, transparent); @supports (color: color-mix(in lab, red, red)){--tw-gradient-from: color-mix(in oklab, var(--color-sky-100) 80%, transparent);} --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));} .from-slate-200\/60{--tw-gradient-from: color-mix(in srgb, oklch(92.9% 0.013 255.508) 60%, transparent); @supports (color: color-mix(in lab, red, red)){--tw-gradient-from: color-mix(in oklab, var(--color-slate-200) 60%, transparent);} --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));} .from-white{--tw-gradient-from: var(--color-white); --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));} .via-sky-50{--tw-gradient-via: var(--color-sky-50); --tw-gradient-via-stops: var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-via-stops);} .via-sky-50\/85{--tw-gradient-via: color-mix(in srgb, oklch(97.7% 0.013 236.62) 85%, transparent); @supports (color: color-mix(in lab, red, red)){--tw-gradient-via: color-mix(in oklab, var(--color-sky-50) 85%, transparent);} --tw-gradient-via-stops: var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-via-stops);} .via-white\/80{--tw-gradient-via: color-mix(in srgb, #fff 80%, transparent); @supports (color: color-mix(in lab, red, red)){--tw-gradient-via: color-mix(in oklab, var(--color-white) 80%, transparent);} --tw-gradient-via-stops: var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-via-stops);} .to-amber-50\/50{--tw-gradient-to: color-mix(in srgb, oklch(98.7% 0.022 95.277) 50%, transparent); @supports (color: color-mix(in lab, red, red)){--tw-gradient-to: color-mix(in oklab, var(--color-amber-50) 50%, transparent);} --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));} .to-transparent{--tw-gradient-to: transparent; --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));} .object-cover{object-fit: cover;} .object-center{object-position: center;} .p-1{padding: calc(var(--spacing) * 1);} .p-2{padding: calc(var(--spacing) * 2);} .p-2\.5{padding: calc(var(--spacing) * 2.5);} .p-3{padding: calc(var(--spacing) * 3);} .p-4{padding: calc(var(--spacing) * 4);} .p-6{padding: calc(var(--spacing) * 6);} .px-2{padding-inline: calc(var(--spacing) * 2);} .px-3{padding-inline: calc(var(--spacing) * 3);} .px-3\.5{padding-inline: calc(var(--spacing) * 3.5);} .px-4{padding-inline: calc(var(--spacing) * 4);} .px-5{padding-inline: calc(var(--spacing) * 5);} .px-6{padding-inline: calc(var(--spacing) * 6);} .px-8{padding-inline: calc(var(--spacing) * 8);} .py-1{padding-block: calc(var(--spacing) * 1);} .py-1\.5{padding-block: calc(var(--spacing) * 1.5);} .py-2{padding-block: calc(var(--spacing) * 2);} .py-2\.5{padding-block: calc(var(--spacing) * 2.5);} .py-3{padding-block: calc(var(--spacing) * 3);} .py-3\.5{padding-block: calc(var(--spacing) * 3.5);} .py-4{padding-block: calc(var(--spacing) * 4);} .py-5{padding-block: calc(var(--spacing) * 5);} .py-10{padding-block: calc(var(--spacing) * 10);} .py-12{padding-block: calc(var(--spacing) * 12);} .pt-1{padding-top: calc(var(--spacing) * 1);} .pt-2{padding-top: calc(var(--spacing) * 2);} .pt-6{padding-top: calc(var(--spacing) * 6);} .pr-4{padding-right: calc(var(--spacing) * 4);} .pl-11{padding-left: calc(var(--spacing) * 11);} .pl-12{padding-left: calc(var(--spacing) * 12);} .text-center{text-align: center;} .text-2xl{font-size: var(--text-2xl); line-height: var(--tw-leading, var(--text-2xl--line-height));} .text-3xl{font-size: var(--text-3xl); line-height: var(--tw-leading, var(--text-3xl--line-height));} .text-4xl{font-size: var(--text-4xl); line-height: var(--tw-leading, var(--text-4xl--line-height));} .text-base{font-size: var(--text-base); line-height: var(--tw-leading, var(--text-base--line-height));} .text-lg{font-size: var(--text-lg); line-height: var(--tw-leading, var(--text-lg--line-height));} .text-sm{font-size: var(--text-sm); line-height: var(--tw-leading, var(--text-sm--line-height));} .text-xl{font-size: var(--text-xl); line-height: var(--tw-leading, var(--text-xl--line-height));} .text-xs{font-size: var(--text-xs); line-height: var(--tw-leading, var(--text-xs--line-height));} .text-\[11px\]{font-size: 11px;} .leading-\[1\.12\]{--tw-leading: 1.12; line-height: 1.12;} .leading-none{--tw-leading: 1; line-height: 1;} .leading-relaxed{--tw-leading: var(--leading-relaxed); line-height: var(--leading-relaxed);} .leading-snug{--tw-leading: var(--leading-snug); line-height: var(--leading-snug);} .leading-tight{--tw-leading: var(--leading-tight); line-height: var(--leading-tight);} .font-black{--tw-font-weight: var(--font-weight-black); font-weight: var(--font-weight-black);} .font-bold{--tw-font-weight: var(--font-weight-bold); font-weight: var(--font-weight-bold);} .font-extrabold{--tw-font-weight: var(--font-weight-extrabold); font-weight: var(--font-weight-extrabold);} .font-medium{--tw-font-weight: var(--font-weight-medium); font-weight: var(--font-weight-medium);} .font-semibold{--tw-font-weight: var(--font-weight-semibold); font-weight: var(--font-weight-semibold);} .tracking-tight{--tw-tracking: var(--tracking-tight); letter-spacing: var(--tracking-tight);} .tracking-wide{--tw-tracking: var(--tracking-wide); letter-spacing: var(--tracking-wide);} .tracking-wider{--tw-tracking: var(--tracking-wider); letter-spacing: var(--tracking-wider);} .tracking-widest{--tw-tracking: var(--tracking-widest); letter-spacing: var(--tracking-widest);} .whitespace-nowrap{white-space: nowrap;} .text-amber-500{color: var(--color-amber-500);} .text-amber-700{color: var(--color-amber-700);} .text-amber-800{color: var(--color-amber-800);} .text-blue-500{color: var(--color-blue-500);} .text-blue-600{color: var(--color-blue-600);} .text-emerald-500{color: var(--color-emerald-500);} .text-emerald-600{color: var(--color-emerald-600);} .text-orange-500{color: var(--color-orange-500);} .text-orange-600{color: var(--color-orange-600);} .text-orange-700{color: var(--color-orange-700);} .text-orange-900{color: var(--color-orange-900);} .text-purple-500{color: var(--color-purple-500);} .text-purple-600{color: var(--color-purple-600);} .text-sky-600{color: var(--color-sky-600);} .text-slate-300{color: var(--color-slate-300);} .text-slate-400{color: var(--color-slate-400);} .text-slate-500{color: var(--color-slate-500);} .text-slate-600{color: var(--color-slate-600);} .text-slate-700{color: var(--color-slate-700);} .text-slate-800{color: var(--color-slate-800);} .text-slate-900{color: var(--color-slate-900);} .text-white{color: var(--color-white);} .uppercase{text-transform: uppercase;} .antialiased{-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;} .opacity-0{opacity: 0%;} .opacity-40{opacity: 40%;} .opacity-100{opacity: 100%;} .shadow-2xl{--tw-shadow: 0 25px 50px -12px var(--tw-shadow-color, rgb(0 0 0 / 0.25)); box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);} .shadow-card{--tw-shadow: 0 1px 3px var(--tw-shadow-color, rgba(0,0,0,.07)), 0 1px 2px var(--tw-shadow-color, rgba(0,0,0,.04)); box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);} .shadow-inner{--tw-shadow: inset 0 2px 4px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.05)); box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);} .shadow-lg{--tw-shadow: 0 10px 15px -3px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 4px 6px -4px var(--tw-shadow-color, rgb(0 0 0 / 0.1)); box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);} .shadow-md{--tw-shadow: 0 4px 6px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 2px 4px -2px var(--tw-shadow-color, rgb(0 0 0 / 0.1)); box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);} .shadow-sm{--tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1)); box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);} .shadow-xl{--tw-shadow: 0 20px 25px -5px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 8px 10px -6px var(--tw-shadow-color, rgb(0 0 0 / 0.1)); box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);} .shadow-xs{--tw-shadow: 0 1px 2px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.05)); box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);} .drop-shadow-sm{--tw-drop-shadow-size: drop-shadow(0 1px 2px var(--tw-drop-shadow-color, rgb(0 0 0 / 0.15))); --tw-drop-shadow: drop-shadow(var(--drop-shadow-sm)); filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);} .backdrop-blur-\[2px\]{--tw-backdrop-blur: blur(2px); -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,); backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);} .backdrop-blur-md{--tw-backdrop-blur: blur(var(--blur-md)); -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,); backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);} .backdrop-blur-sm{--tw-backdrop-blur: blur(var(--blur-sm)); -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,); backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);} .transition{transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, visibility, content-visibility, overlay, pointer-events; transition-timing-function: var(--tw-ease, var(--default-transition-timing-function)); transition-duration: var(--tw-duration, var(--default-transition-duration));} .transition-all{transition-property: all; transition-timing-function: var(--tw-ease, var(--default-transition-timing-function)); transition-duration: var(--tw-duration, var(--default-transition-duration));} .transition-colors{transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to; transition-timing-function: var(--tw-ease, var(--default-transition-timing-function)); transition-duration: var(--tw-duration, var(--default-transition-duration));} .transition-opacity{transition-property: opacity; transition-timing-function: var(--tw-ease, var(--default-transition-timing-function)); transition-duration: var(--tw-duration, var(--default-transition-duration));} .transition-transform{transition-property: transform, translate, scale, rotate; transition-timing-function: var(--tw-ease, var(--default-transition-timing-function)); transition-duration: var(--tw-duration, var(--default-transition-duration));} .duration-150{--tw-duration: 150ms; transition-duration: 150ms;} .duration-200{--tw-duration: 200ms; transition-duration: 200ms;} .duration-300{--tw-duration: 300ms; transition-duration: 300ms;} .select-none{-webkit-user-select: none; user-select: none;} .group-hover\:pointer-events-auto{&:is(:where(.group):hover *){@media (hover: hover){pointer-events: auto;}}} .group-hover\:translate-x-1{&:is(:where(.group):hover *){@media (hover: hover){--tw-translate-x: calc(var(--spacing) * 1); translate: var(--tw-translate-x) var(--tw-translate-y);}}} .group-hover\:translate-x-1\.5{&:is(:where(.group):hover *){@media (hover: hover){--tw-translate-x: calc(var(--spacing) * 1.5); translate: var(--tw-translate-x) var(--tw-translate-y);}}} .group-hover\:translate-y-0{&:is(:where(.group):hover *){@media (hover: hover){--tw-translate-y: calc(var(--spacing) * 0); translate: var(--tw-translate-x) var(--tw-translate-y);}}} .group-hover\:rotate-180{&:is(:where(.group):hover *){@media (hover: hover){rotate: 180deg;}}} .group-hover\:text-orange-600{&:is(:where(.group):hover *){@media (hover: hover){color: var(--color-orange-600);}}} .group-hover\:opacity-100{&:is(:where(.group):hover *){@media (hover: hover){opacity: 100%;}}} .group-hover\/item\:scale-110{&:is(:where(.group\/item):hover *){@media (hover: hover){--tw-scale-x: 110%; --tw-scale-y: 110%; --tw-scale-z: 110%; scale: var(--tw-scale-x) var(--tw-scale-y);}}} .group-hover\/item\:bg-amber-500{&:is(:where(.group\/item):hover *){@media (hover: hover){background-color: var(--color-amber-500);}}} .group-hover\/item\:bg-amber-700{&:is(:where(.group\/item):hover *){@media (hover: hover){background-color: var(--color-amber-700);}}} .group-hover\/item\:bg-amber-800{&:is(:where(.group\/item):hover *){@media (hover: hover){background-color: var(--color-amber-800);}}} .group-hover\/item\:bg-blue-600{&:is(:where(.group\/item):hover *){@media (hover: hover){background-color: var(--color-blue-600);}}} .group-hover\/item\:bg-emerald-600{&:is(:where(.group\/item):hover *){@media (hover: hover){background-color: var(--color-emerald-600);}}} .group-hover\/item\:bg-orange-600{&:is(:where(.group\/item):hover *){@media (hover: hover){background-color: var(--color-orange-600);}}} .group-hover\/item\:bg-purple-600{&:is(:where(.group\/item):hover *){@media (hover: hover){background-color: var(--color-purple-600);}}} .group-hover\/item\:bg-sky-600{&:is(:where(.group\/item):hover *){@media (hover: hover){background-color: var(--color-sky-600);}}} .group-hover\/item\:bg-slate-700{&:is(:where(.group\/item):hover *){@media (hover: hover){background-color: var(--color-slate-700);}}} .group-hover\/item\:bg-slate-800{&:is(:where(.group\/item):hover *){@media (hover: hover){background-color: var(--color-slate-800);}}} .group-hover\/item\:text-white{&:is(:where(.group\/item):hover *){@media (hover: hover){color: var(--color-white);}}} .selection\:bg-orange-500{& *::selection{background-color: var(--color-orange-500);} &::selection{background-color: var(--color-orange-500);}} .selection\:text-white{& *::selection{color: var(--color-white);} &::selection{color: var(--color-white);}} .placeholder\:text-slate-400{&::placeholder{color: var(--color-slate-400);}} .hover\:-translate-y-0\.5{&:hover{@media (hover: hover){--tw-translate-y: calc(var(--spacing) * -0.5); translate: var(--tw-translate-x) var(--tw-translate-y);}}} .hover\:scale-105{&:hover{@media (hover: hover){--tw-scale-x: 105%; --tw-scale-y: 105%; --tw-scale-z: 105%; scale: var(--tw-scale-x) var(--tw-scale-y);}}} .hover\:border-orange-300{&:hover{@media (hover: hover){border-color: var(--color-orange-300);}}} .hover\:bg-orange-50{&:hover{@media (hover: hover){background-color: var(--color-orange-50);}}} .hover\:bg-orange-50\/40{&:hover{@media (hover: hover){background-color: color-mix(in srgb, oklch(98% 0.016 73.684) 40%, transparent); @supports (color: color-mix(in lab, red, red)){background-color: color-mix(in oklab, var(--color-orange-50) 40%, transparent);}}}} .hover\:bg-orange-700{&:hover{@media (hover: hover){background-color: var(--color-orange-700);}}} .hover\:bg-slate-100{&:hover{@media (hover: hover){background-color: var(--color-slate-100);}}} .hover\:bg-slate-200{&:hover{@media (hover: hover){background-color: var(--color-slate-200);}}} .hover\:bg-white{&:hover{@media (hover: hover){background-color: var(--color-white);}}} .hover\:text-blue-700{&:hover{@media (hover: hover){color: var(--color-blue-700);}}} .hover\:text-orange-600{&:hover{@media (hover: hover){color: var(--color-orange-600);}}} .hover\:text-white{&:hover{@media (hover: hover){color: var(--color-white);}}} .hover\:shadow-card-hover{&:hover{@media (hover: hover){--tw-shadow: 0 12px 24px -6px var(--tw-shadow-color, rgba(0,0,0,.1)), 0 4px 8px -2px var(--tw-shadow-color, rgba(0,0,0,.05)); box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);}}} .hover\:shadow-lg{&:hover{@media (hover: hover){--tw-shadow: 0 10px 15px -3px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 4px 6px -4px var(--tw-shadow-color, rgb(0 0 0 / 0.1)); box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);}}} .focus\:border-orange-500{&:focus{border-color: var(--color-orange-500);}} .focus\:bg-white{&:focus{background-color: var(--color-white);}} .focus\:ring-2{&:focus{--tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor); box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);}} .focus\:ring-orange-500{&:focus{--tw-ring-color: var(--color-orange-500);}} .focus\:ring-orange-500\/20{&:focus{--tw-ring-color: color-mix(in srgb, oklch(70.5% 0.213 47.604) 20%, transparent); @supports (color: color-mix(in lab, red, red)){--tw-ring-color: color-mix(in oklab, var(--color-orange-500) 20%, transparent);}}} .focus\:ring-orange-500\/25{&:focus{--tw-ring-color: color-mix(in srgb, oklch(70.5% 0.213 47.604) 25%, transparent); @supports (color: color-mix(in lab, red, red)){--tw-ring-color: color-mix(in oklab, var(--color-orange-500) 25%, transparent);}}} .focus\:outline-none{&:focus{--tw-outline-style: none; outline-style: none;}} .active\:scale-95{&:active{--tw-scale-x: 95%; --tw-scale-y: 95%; --tw-scale-z: 95%; scale: var(--tw-scale-x) var(--tw-scale-y);}} .active\:bg-orange-800{&:active{background-color: var(--color-orange-800);}} .sm\:right-3{@media (width >= 40rem){right: calc(var(--spacing) * 3);}} .sm\:right-8{@media (width >= 40rem){right: calc(var(--spacing) * 8);}} .sm\:bottom-8{@media (width >= 40rem){bottom: calc(var(--spacing) * 8);}} .sm\:left-3{@media (width >= 40rem){left: calc(var(--spacing) * 3);}} .sm\:left-5{@media (width >= 40rem){left: calc(var(--spacing) * 5);}} .sm\:mt-5{@media (width >= 40rem){margin-top: calc(var(--spacing) * 5);}} .sm\:mb-10{@media (width >= 40rem){margin-bottom: calc(var(--spacing) * 10);}} .sm\:mb-12{@media (width >= 40rem){margin-bottom: calc(var(--spacing) * 12);}} .sm\:inline{@media (width >= 40rem){display: inline;}} .sm\:h-11{@media (width >= 40rem){height: calc(var(--spacing) * 11);}} .sm\:h-12{@media (width >= 40rem){height: calc(var(--spacing) * 12);}} .sm\:h-13{@media (width >= 40rem){height: calc(var(--spacing) * 13);}} .sm\:h-14{@media (width >= 40rem){height: calc(var(--spacing) * 14);}} .sm\:h-16{@media (width >= 40rem){height: calc(var(--spacing) * 16);}} .sm\:h-22{@media (width >= 40rem){height: calc(var(--spacing) * 22);}} .sm\:min-h-\[500px\]{@media (width >= 40rem){min-height: 500px;}} .sm\:w-11{@media (width >= 40rem){width: calc(var(--spacing) * 11);}} .sm\:w-12{@media (width >= 40rem){width: calc(var(--spacing) * 12);}} .sm\:w-13{@media (width >= 40rem){width: calc(var(--spacing) * 13);}} .sm\:w-14{@media (width >= 40rem){width: calc(var(--spacing) * 14);}} .sm\:w-16{@media (width >= 40rem){width: calc(var(--spacing) * 16);}} .sm\:w-20{@media (width >= 40rem){width: calc(var(--spacing) * 20);}} .sm\:w-28{@media (width >= 40rem){width: calc(var(--spacing) * 28);}} .sm\:w-auto{@media (width >= 40rem){width: auto;}} .sm\:max-w-\[270px\]{@media (width >= 40rem){max-width: 270px;}} .sm\:grid-cols-2{@media (width >= 40rem){grid-template-columns: repeat(2, minmax(0, 1fr));}} .sm\:grid-cols-3{@media (width >= 40rem){grid-template-columns: repeat(3, minmax(0, 1fr));}} .sm\:flex-row{@media (width >= 40rem){flex-direction: row;}} .sm\:items-center{@media (width >= 40rem){align-items: center;}} .sm\:gap-3\.5{@media (width >= 40rem){gap: calc(var(--spacing) * 3.5);}} .sm\:gap-4{@media (width >= 40rem){gap: calc(var(--spacing) * 4);}} .sm\:gap-5{@media (width >= 40rem){gap: calc(var(--spacing) * 5);}} .sm\:gap-6{@media (width >= 40rem){gap: calc(var(--spacing) * 6);}} .sm\:gap-8{@media (width >= 40rem){gap: calc(var(--spacing) * 8);}} .sm\:self-auto{@media (width >= 40rem){align-self: auto;}} .sm\:rounded-none{@media (width >= 40rem){border-radius: 0;}} .sm\:bg-transparent{@media (width >= 40rem){background-color: transparent;}} .sm\:p-0{@media (width >= 40rem){padding: calc(var(--spacing) * 0);}} .sm\:p-3{@media (width >= 40rem){padding: calc(var(--spacing) * 3);}} .sm\:p-4{@media (width >= 40rem){padding: calc(var(--spacing) * 4);}} .sm\:p-5{@media (width >= 40rem){padding: calc(var(--spacing) * 5);}} .sm\:p-10{@media (width >= 40rem){padding: calc(var(--spacing) * 10);}} .sm\:px-4{@media (width >= 40rem){padding-inline: calc(var(--spacing) * 4);}} .sm\:px-6{@media (width >= 40rem){padding-inline: calc(var(--spacing) * 6);}} .sm\:py-4{@media (width >= 40rem){padding-block: calc(var(--spacing) * 4);}} .sm\:py-16{@media (width >= 40rem){padding-block: calc(var(--spacing) * 16);}} .sm\:pl-13{@media (width >= 40rem){padding-left: calc(var(--spacing) * 13);}} .sm\:text-left{@media (width >= 40rem){text-align: left;}} .sm\:text-3xl{@media (width >= 40rem){font-size: var(--text-3xl); line-height: var(--tw-leading, var(--text-3xl--line-height));}} .sm\:text-4xl{@media (width >= 40rem){font-size: var(--text-4xl); line-height: var(--tw-leading, var(--text-4xl--line-height));}} .sm\:text-5xl{@media (width >= 40rem){font-size: var(--text-5xl); line-height: var(--tw-leading, var(--text-5xl--line-height));}} .sm\:text-base{@media (width >= 40rem){font-size: var(--text-base); line-height: var(--tw-leading, var(--text-base--line-height));}} .sm\:text-lg{@media (width >= 40rem){font-size: var(--text-lg); line-height: var(--tw-leading, var(--text-lg--line-height));}} .sm\:text-sm{@media (width >= 40rem){font-size: var(--text-sm); line-height: var(--tw-leading, var(--text-sm--line-height));}} .sm\:text-xl{@media (width >= 40rem){font-size: var(--text-xl); line-height: var(--tw-leading, var(--text-xl--line-height));}} .sm\:text-xs{@media (width >= 40rem){font-size: var(--text-xs); line-height: var(--tw-leading, var(--text-xs--line-height));}} .sm\:font-medium{@media (width >= 40rem){--tw-font-weight: var(--font-weight-medium); font-weight: var(--font-weight-medium);}} .sm\:opacity-65{@media (width >= 40rem){opacity: 65%;}} .sm\:backdrop-blur-none{@media (width >= 40rem){--tw-backdrop-blur: ; -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,); backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);}} .md\:block{@media (width >= 48rem){display: block;}} .lg\:right-12{@media (width >= 64rem){right: calc(var(--spacing) * 12);}} .lg\:bottom-10{@media (width >= 64rem){bottom: calc(var(--spacing) * 10);}} .lg\:min-h-\[540px\]{@media (width >= 64rem){min-height: 540px;}} .lg\:w-3\/5{@media (width >= 64rem){width: calc(3/5 * 100%);}} .lg\:w-64{@media (width >= 64rem){width: calc(var(--spacing) * 64);}} .lg\:max-w-2xl{@media (width >= 64rem){max-width: var(--container-2xl);}} .lg\:grid-cols-4{@media (width >= 64rem){grid-template-columns: repeat(4, minmax(0, 1fr));}} .lg\:justify-start{@media (width >= 64rem){justify-content: flex-start;}} .lg\:from-sky-50{@media (width >= 64rem){--tw-gradient-from: var(--color-sky-50); --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));}} .lg\:via-sky-50\/30{@media (width >= 64rem){--tw-gradient-via: color-mix(in srgb, oklch(97.7% 0.013 236.62) 30%, transparent); @supports (color: color-mix(in lab, red, red)){--tw-gradient-via: color-mix(in oklab, var(--color-sky-50) 30%, transparent);} --tw-gradient-via-stops: var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-via-stops);}} .lg\:to-transparent{@media (width >= 64rem){--tw-gradient-to: transparent; --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));}} .lg\:object-right{@media (width >= 64rem){object-position: right;}} .lg\:p-12{@media (width >= 64rem){padding: calc(var(--spacing) * 12);}} .lg\:px-8{@media (width >= 64rem){padding-inline: calc(var(--spacing) * 8);}} .lg\:py-20{@media (width >= 64rem){padding-block: calc(var(--spacing) * 20);}} .lg\:text-left{@media (width >= 64rem){text-align: left;}} .lg\:text-5xl{@media (width >= 64rem){font-size: var(--text-5xl); line-height: var(--tw-leading, var(--text-5xl--line-height));}} .lg\:text-6xl{@media (width >= 64rem){font-size: var(--text-6xl); line-height: var(--tw-leading, var(--text-6xl--line-height));}} .lg\:opacity-100{@media (width >= 64rem){opacity: 100%;}} .xl\:flex{@media (width >= 80rem){display: flex;}} .xl\:hidden{@media (width >= 80rem){display: none;}}} .inline-icon{width:1em;height:1em;display:inline-block;flex:none;vertical-align:middle}</style>
 
   <style>
     /* Strict viewport confinement */
@@ -113,7 +88,7 @@
         <div class="relative group cursor-pointer py-2">
           <span class="hover:text-orange-600 flex items-center gap-1.5 transition-colors">
             Calculators
-            <i class="fa-solid fa-chevron-down text-xs text-slate-400 group-hover:text-orange-600 transition-transform group-hover:rotate-180"></i>
+            <svg class="text-xs text-slate-400 group-hover:text-orange-600 transition-transform group-hover:rotate-180 inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
           </span>
           <!-- Dropdown menu -->
           <div class="absolute left-0 top-full pt-2 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200">
@@ -134,7 +109,7 @@
       <!-- Search in Header & Mobile menu toggle -->
       <div class="flex items-center gap-3">
         <div class="relative hidden md:block w-52 lg:w-64">
-          <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-base"></i>
+          <svg class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-base inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 19a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm5.5-2.5L21 21"/></svg>
           <input 
             type="text" 
             placeholder="Search calculators..." 
@@ -150,7 +125,7 @@
           aria-label="Toggle Navigation" 
           class="xl:hidden p-3 rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-orange-500"
         >
-          <i id="hamburger-icon" class="fa-solid fa-bars text-xl w-6 h-6 flex items-center justify-center"></i>
+          <svg id="hamburger-icon" class="text-xl w-6 h-6 flex items-center justify-center inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
       </div>
 
@@ -159,7 +134,7 @@
     <!-- Mobile Drawer Menu -->
     <div id="mobile-menu" class="hidden xl:hidden border-t border-slate-200 bg-white px-5 py-4 space-y-3 shadow-lg w-full max-w-full">
       <div class="relative mb-2">
-        <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-base"></i>
+        <svg class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-base inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 19a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm5.5-2.5L21 21"/></svg>
         <input 
           type="text" 
           placeholder="Search all calculators..." 
@@ -168,10 +143,10 @@
         >
       </div>
       <div class="grid grid-cols-2 gap-2.5 text-base font-bold text-slate-700 pt-1">
-        <a href="#popular-calculators" onclick="toggleMobileMenu()" class="p-3 rounded-xl hover:bg-orange-50 hover:text-orange-600 transition flex items-center gap-2.5"><i class="fa-solid fa-calculator text-orange-500 text-sm"></i> Calculators</a>
-        <a href="#category-nav" onclick="toggleMobileMenu()" class="p-3 rounded-xl hover:bg-orange-50 hover:text-orange-600 transition flex items-center gap-2.5"><i class="fa-solid fa-arrows-rotate text-blue-500 text-sm"></i> Converters</a>
-        <a href="#popular-calculators" onclick="toggleMobileMenu()" class="p-3 rounded-xl hover:bg-orange-50 hover:text-orange-600 transition flex items-center gap-2.5"><i class="fa-solid fa-layer-group text-emerald-500 text-sm"></i> Materials</a>
-        <a href="#category-nav" onclick="toggleMobileMenu()" class="p-3 rounded-xl hover:bg-orange-50 hover:text-orange-600 transition flex items-center gap-2.5"><i class="fa-solid fa-ruler-combined text-purple-500 text-sm"></i> Measurements</a>
+        <a href="#popular-calculators" onclick="toggleMobileMenu()" class="p-3 rounded-xl hover:bg-orange-50 hover:text-orange-600 transition flex items-center gap-2.5"><svg class="text-orange-500 text-sm inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2h12v20H6V2zm3 3h6v4H9V5zm0 8h2m2 0h2m-6 4h2m2 0h2"/></svg> Calculators</a>
+        <a href="#category-nav" onclick="toggleMobileMenu()" class="p-3 rounded-xl hover:bg-orange-50 hover:text-orange-600 transition flex items-center gap-2.5"><svg class="text-blue-500 text-sm inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 0 0-14.9-3M4 5v4h4M4 13a8 8 0 0 0 14.9 3M20 19v-4h-4"/></svg> Converters</a>
+        <a href="#popular-calculators" onclick="toggleMobileMenu()" class="p-3 rounded-xl hover:bg-orange-50 hover:text-orange-600 transition flex items-center gap-2.5"><svg class="text-emerald-500 text-sm inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5 9-5zm-9 9 9 5 9-5m-18 5 9 5 9-5"/></svg> Materials</a>
+        <a href="#category-nav" onclick="toggleMobileMenu()" class="p-3 rounded-xl hover:bg-orange-50 hover:text-orange-600 transition flex items-center gap-2.5"><svg class="text-purple-500 text-sm inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17L17 4l3 3L7 20l-3-3zm4-1 3 3m-1-7 3 3m-1-7 3 3"/></svg> Measurements</a>
       </div>
     </div>
   </header>
@@ -199,7 +174,7 @@
       <div class="absolute right-4 sm:right-8 lg:right-12 bottom-5 sm:bottom-8 lg:bottom-10 z-10 max-w-[230px] sm:max-w-[270px]">
         <div class="bg-white/95 border border-white/80 text-slate-900 p-4 sm:p-5 rounded-2xl shadow-xl backdrop-blur-md">
           <div class="flex items-center gap-2 text-orange-600 font-extrabold text-sm uppercase tracking-wide">
-            <i class="fa-solid fa-ruler-combined"></i> Built for real projects
+            <svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17L17 4l3 3L7 20l-3-3zm4-1 3 3m-1-7 3 3m-1-7 3 3"/></svg> Built for real projects
           </div>
           <p class="mt-1.5 text-sm sm:text-base font-semibold leading-snug text-slate-700">Estimate quantities, dimensions and materials in seconds.</p>
         </div>
@@ -225,7 +200,7 @@
         <!-- PROMINENT SEARCH INPUT & BUTTON -->
         <div class="mt-7 flex flex-col sm:flex-row gap-3 max-w-xl w-full">
           <div class="relative flex-1 w-full shadow-sm rounded-xl">
-            <i class="fa-solid fa-magnifying-glass absolute left-4 sm:left-5 top-1/2 -translate-y-1/2 text-slate-400 text-base sm:text-lg"></i>
+            <svg class="absolute left-4 sm:left-5 top-1/2 -translate-y-1/2 text-slate-400 text-base sm:text-lg inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 19a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm5.5-2.5L21 21"/></svg>
             <input 
               id="hero-search-input"
               type="text" 
@@ -248,7 +223,7 @@
           <!-- Badge 1 -->
           <div class="flex items-center gap-3.5 bg-white/70 sm:bg-transparent backdrop-blur-[2px] sm:backdrop-blur-none p-2.5 sm:p-0 rounded-xl sm:rounded-none">
             <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-emerald-500 flex items-center justify-center text-white shrink-0 shadow-sm">
-              <i class="fa-solid fa-bolt text-lg"></i>
+              <svg class="text-lg inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8"/></svg>
             </div>
             <div>
               <div class="font-bold text-slate-900 text-base leading-tight">Free to use</div>
@@ -259,7 +234,7 @@
           <!-- Badge 2 -->
           <div class="flex items-center gap-3.5 bg-white/70 sm:bg-transparent backdrop-blur-[2px] sm:backdrop-blur-none p-2.5 sm:p-0 rounded-xl sm:rounded-none">
             <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-blue-600 flex items-center justify-center text-white shrink-0 shadow-sm">
-              <i class="fa-solid fa-gear text-lg"></i>
+              <svg class="text-lg inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm0-6v3m0 14v3M4.9 4.9L7 7m10 10 2.1 2.1M2 12h3m14 0h3M4.9 19.1 7 17m10-10 2.1-2.1"/></svg>
             </div>
             <div>
               <div class="font-bold text-slate-900 text-base leading-tight">Standard formulas</div>
@@ -270,7 +245,7 @@
           <!-- Badge 3 -->
           <div class="flex items-center gap-3.5 bg-white/70 sm:bg-transparent backdrop-blur-[2px] sm:backdrop-blur-none p-2.5 sm:p-0 rounded-xl sm:rounded-none">
             <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-orange-500 flex items-center justify-center text-white shrink-0 shadow-sm">
-              <i class="fa-solid fa-helmet-safety text-lg"></i>
+              <svg class="text-lg inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 16a8 8 0 0 1 16 0v2H4v-2zm3 0V9m10 7V9M3 20h18"/></svg>
             </div>
             <div>
               <div class="font-bold text-slate-900 text-base leading-tight">Covers projects</div>
@@ -288,10 +263,10 @@
   <section class="bg-white border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 text-center lg:text-left">
-        <div class="flex items-center justify-center lg:justify-start gap-2.5 text-sm font-bold text-slate-700"><i class="fa-solid fa-check-circle text-emerald-500"></i> Free to use</div>
-        <div class="flex items-center justify-center lg:justify-start gap-2.5 text-sm font-bold text-slate-700"><i class="fa-solid fa-mobile-screen text-blue-500"></i> Works on any device</div>
-        <div class="flex items-center justify-center lg:justify-start gap-2.5 text-sm font-bold text-slate-700"><i class="fa-solid fa-calculator text-orange-500"></i> Instant calculations</div>
-        <div class="flex items-center justify-center lg:justify-start gap-2.5 text-sm font-bold text-slate-700"><i class="fa-solid fa-user-shield text-slate-500"></i> No signup required</div>
+        <div class="flex items-center justify-center lg:justify-start gap-2.5 text-sm font-bold text-slate-700"><svg class="text-emerald-500 inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0zm-13 0 2.5 2.5L16 9"/></svg> Free to use</div>
+        <div class="flex items-center justify-center lg:justify-start gap-2.5 text-sm font-bold text-slate-700"><svg class="text-blue-500 inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm3 17h4"/></svg> Works on any device</div>
+        <div class="flex items-center justify-center lg:justify-start gap-2.5 text-sm font-bold text-slate-700"><svg class="text-orange-500 inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2h12v20H6V2zm3 3h6v4H9V5zm0 8h2m2 0h2m-6 4h2m2 0h2"/></svg> Instant calculations</div>
+        <div class="flex items-center justify-center lg:justify-start gap-2.5 text-sm font-bold text-slate-700"><svg class="text-slate-500 inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm-7 8a7 7 0 0 1 14 0M18 13l3 1v3c0 2-1.5 3.5-3 4-1.5-.5-3-2-3-4v-3l3-1z"/></svg> No signup required</div>
       </div>
     </div>
   </section>
@@ -308,7 +283,7 @@
       </div>
       <a href="#popular-calculators" class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-black text-base group self-start sm:self-auto">
         View All Calculators
-        <i class="fa-solid fa-arrow-right text-sm group-hover:translate-x-1.5 transition-transform"></i>
+        <svg class="text-sm group-hover:translate-x-1.5 transition-transform inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
       </a>
     </div>
 
@@ -337,7 +312,7 @@
             <p class="text-sm text-slate-500 truncate mt-1">Calculate concrete volume, bags, and cost.</p>
           </div>
         </div>
-        <i class="fa-solid fa-chevron-right text-slate-300 text-sm group-hover:text-orange-600 group-hover:translate-x-1 transition-all shrink-0 ml-2"></i>
+        <svg class="text-slate-300 text-sm group-hover:text-orange-600 group-hover:translate-x-1 transition-all shrink-0 ml-2 inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
       </div>
 
       <!-- 2. Cement Calculator -->
@@ -360,7 +335,7 @@
             <p class="text-sm text-slate-500 truncate mt-1">Estimate cement quantity for your project.</p>
           </div>
         </div>
-        <i class="fa-solid fa-chevron-right text-slate-300 text-sm group-hover:text-orange-600 group-hover:translate-x-1 transition-all shrink-0 ml-2"></i>
+        <svg class="text-slate-300 text-sm group-hover:text-orange-600 group-hover:translate-x-1 transition-all shrink-0 ml-2 inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
       </div>
 
       <!-- 3. Sand Calculator -->
@@ -382,7 +357,7 @@
             <p class="text-sm text-slate-500 truncate mt-1">Calculate sand quantity and cost.</p>
           </div>
         </div>
-        <i class="fa-solid fa-chevron-right text-slate-300 text-sm group-hover:text-orange-600 group-hover:translate-x-1 transition-all shrink-0 ml-2"></i>
+        <svg class="text-slate-300 text-sm group-hover:text-orange-600 group-hover:translate-x-1 transition-all shrink-0 ml-2 inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
       </div>
 
       <!-- 4. Gravel Calculator -->
@@ -407,7 +382,7 @@
             <p class="text-sm text-slate-500 truncate mt-1">Estimate gravel volume and weight.</p>
           </div>
         </div>
-        <i class="fa-solid fa-chevron-right text-slate-300 text-sm group-hover:text-orange-600 group-hover:translate-x-1 transition-all shrink-0 ml-2"></i>
+        <svg class="text-slate-300 text-sm group-hover:text-orange-600 group-hover:translate-x-1 transition-all shrink-0 ml-2 inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
       </div>
 
       <!-- 5. Brick Calculator -->
@@ -428,7 +403,7 @@
             <p class="text-sm text-slate-500 truncate mt-1">Calculate number of bricks and cost.</p>
           </div>
         </div>
-        <i class="fa-solid fa-chevron-right text-slate-300 text-sm group-hover:text-orange-600 group-hover:translate-x-1 transition-all shrink-0 ml-2"></i>
+        <svg class="text-slate-300 text-sm group-hover:text-orange-600 group-hover:translate-x-1 transition-all shrink-0 ml-2 inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
       </div>
 
       <!-- 6. Block Calculator -->
@@ -449,7 +424,7 @@
             <p class="text-sm text-slate-500 truncate mt-1">Estimate concrete blocks for walls.</p>
           </div>
         </div>
-        <i class="fa-solid fa-chevron-right text-slate-300 text-sm group-hover:text-orange-600 group-hover:translate-x-1 transition-all shrink-0 ml-2"></i>
+        <svg class="text-slate-300 text-sm group-hover:text-orange-600 group-hover:translate-x-1 transition-all shrink-0 ml-2 inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
       </div>
 
       <!-- 7. Paint Calculator -->
@@ -472,7 +447,7 @@
             <p class="text-sm text-slate-500 truncate mt-1">Calculate paint quantity and coverage.</p>
           </div>
         </div>
-        <i class="fa-solid fa-chevron-right text-slate-300 text-sm group-hover:text-orange-600 group-hover:translate-x-1 transition-all shrink-0 ml-2"></i>
+        <svg class="text-slate-300 text-sm group-hover:text-orange-600 group-hover:translate-x-1 transition-all shrink-0 ml-2 inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
       </div>
 
       <!-- 8. Tile Calculator -->
@@ -492,7 +467,7 @@
             <p class="text-sm text-slate-500 truncate mt-1">Estimate tiles, boxes and cost.</p>
           </div>
         </div>
-        <i class="fa-solid fa-chevron-right text-slate-300 text-sm group-hover:text-orange-600 group-hover:translate-x-1 transition-all shrink-0 ml-2"></i>
+        <svg class="text-slate-300 text-sm group-hover:text-orange-600 group-hover:translate-x-1 transition-all shrink-0 ml-2 inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
       </div>
 
       <!-- 9. Roofing Calculator -->
@@ -516,7 +491,7 @@
             <p class="text-sm text-slate-500 truncate mt-1">Calculate roofing materials and cost.</p>
           </div>
         </div>
-        <i class="fa-solid fa-chevron-right text-slate-300 text-sm group-hover:text-orange-600 group-hover:translate-x-1 transition-all shrink-0 ml-2"></i>
+        <svg class="text-slate-300 text-sm group-hover:text-orange-600 group-hover:translate-x-1 transition-all shrink-0 ml-2 inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
       </div>
 
       <!-- 10. Stair Calculator -->
@@ -536,7 +511,7 @@
             <p class="text-sm text-slate-500 truncate mt-1">Calculate stair dimensions and materials.</p>
           </div>
         </div>
-        <i class="fa-solid fa-chevron-right text-slate-300 text-sm group-hover:text-orange-600 group-hover:translate-x-1 transition-all shrink-0 ml-2"></i>
+        <svg class="text-slate-300 text-sm group-hover:text-orange-600 group-hover:translate-x-1 transition-all shrink-0 ml-2 inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
       </div>
 
       <!-- 11. Rebar Calculator -->
@@ -556,7 +531,7 @@
             <p class="text-sm text-slate-500 truncate mt-1">Estimate rebar weight and quantity.</p>
           </div>
         </div>
-        <i class="fa-solid fa-chevron-right text-slate-300 text-sm group-hover:text-orange-600 group-hover:translate-x-1 transition-all shrink-0 ml-2"></i>
+        <svg class="text-slate-300 text-sm group-hover:text-orange-600 group-hover:translate-x-1 transition-all shrink-0 ml-2 inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
       </div>
 
       <!-- 12. Fence Calculator -->
@@ -577,7 +552,7 @@
             <p class="text-sm text-slate-500 truncate mt-1">Calculate fence materials and cost.</p>
           </div>
         </div>
-        <i class="fa-solid fa-chevron-right text-slate-300 text-sm group-hover:text-orange-600 group-hover:translate-x-1 transition-all shrink-0 ml-2"></i>
+        <svg class="text-slate-300 text-sm group-hover:text-orange-600 group-hover:translate-x-1 transition-all shrink-0 ml-2 inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
       </div>
 
     </div>
@@ -585,7 +560,7 @@
     <!-- Empty Filter Notice -->
     <div id="no-results" class="hidden text-center py-12 bg-white rounded-2xl border border-dashed border-slate-300 my-8">
       <div class="w-14 h-14 mx-auto rounded-full bg-orange-50 flex items-center justify-center text-orange-500 mb-3">
-        <i class="fa-solid fa-calculator text-2xl"></i>
+        <svg class="text-2xl inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2h12v20H6V2zm3 3h6v4H9V5zm0 8h2m2 0h2m-6 4h2m2 0h2"/></svg>
       </div>
       <h4 class="font-bold text-slate-800 text-base">No calculators match your search</h4>
       <p class="text-slate-500 text-sm mt-1">Try searching for concrete, sand, paint, brick, tile, stairs, rebar or fence.</p>
@@ -613,7 +588,7 @@
         aria-label="Scroll left to see preceding categories"
         class="absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white/95 hover:bg-white text-slate-700 hover:text-orange-600 shadow-lg border border-slate-200/90 flex items-center justify-center transition-all duration-200 opacity-0 pointer-events-none hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-orange-500 cursor-pointer"
       >
-        <i class="fa-solid fa-chevron-left text-sm sm:text-base"></i>
+        <svg class="text-sm sm:text-base inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
       </button>
 
       <!-- RIGHT NAVIGATION ARROW BUTTON -->
@@ -623,7 +598,7 @@
         aria-label="Scroll right to see unseen categories"
         class="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white/95 hover:bg-white text-slate-700 hover:text-orange-600 shadow-lg border border-slate-200/90 flex items-center justify-center transition-all duration-200 opacity-100 hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-orange-500 cursor-pointer"
       >
-        <i class="fa-solid fa-chevron-right text-sm sm:text-base"></i>
+        <svg class="text-sm sm:text-base inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
       </button>
 
       <!-- Category Viewport with Smooth Ping-Pong Auto-Scroll & Manual User Drag/Swipe -->
@@ -633,7 +608,7 @@
           <!-- 1. Concrete Tools -->
           <a href="#popular-calculators" class="flex flex-col items-center justify-center p-3 rounded-2xl hover:bg-orange-50 group/item transition duration-150 shrink-0 w-24 sm:w-28 select-none">
             <div class="w-12 h-12 rounded-xl bg-orange-50 flex items-center justify-center text-orange-600 group-hover/item:scale-110 group-hover/item:bg-orange-600 group-hover/item:text-white transition-all shadow-xs">
-              <i class="fa-solid fa-house-chimney text-2xl"></i>
+              <svg class="text-2xl inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8v9H3v-9zm5 9v-6h8v6M9 8h6"/></svg>
             </div>
             <span class="text-xs sm:text-sm font-bold text-slate-700 mt-2 text-center leading-tight whitespace-nowrap">Concrete<br>Tools</span>
           </a>
@@ -641,7 +616,7 @@
           <!-- 2. Masonry Tools -->
           <a href="#popular-calculators" class="flex flex-col items-center justify-center p-3 rounded-2xl hover:bg-orange-50 group/item transition duration-150 shrink-0 w-24 sm:w-28 select-none">
             <div class="w-12 h-12 rounded-xl bg-slate-100 flex items-center justify-center text-slate-700 group-hover/item:scale-110 group-hover/item:bg-slate-800 group-hover/item:text-white transition-all shadow-xs">
-              <i class="fa-solid fa-cubes text-2xl"></i>
+              <svg class="text-2xl inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3l5 3v6l-5 3-5-3V6l5-3zm8 6l5 3v6l-5 3-5-3v-6l5-3zM8 15v6"/></svg>
             </div>
             <span class="text-xs sm:text-sm font-bold text-slate-700 mt-2 text-center leading-tight whitespace-nowrap">Masonry<br>Tools</span>
           </a>
@@ -649,7 +624,7 @@
           <!-- 3. Painting Tools -->
           <a href="#popular-calculators" class="flex flex-col items-center justify-center p-3 rounded-2xl hover:bg-orange-50 group/item transition duration-150 shrink-0 w-24 sm:w-28 select-none">
             <div class="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center text-amber-500 group-hover/item:scale-110 group-hover/item:bg-amber-500 group-hover/item:text-white transition-all shadow-xs">
-              <i class="fa-solid fa-paint-roller text-2xl"></i>
+              <svg class="text-2xl inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h11a2 2 0 0 1 2 2v3H7V7H4V5zm5 7h6v10H9V12z"/></svg>
             </div>
             <span class="text-xs sm:text-sm font-bold text-slate-700 mt-2 text-center leading-tight whitespace-nowrap">Painting<br>Tools</span>
           </a>
@@ -657,7 +632,7 @@
           <!-- 4. Roofing Tools -->
           <a href="#popular-calculators" class="flex flex-col items-center justify-center p-3 rounded-2xl hover:bg-orange-50 group/item transition duration-150 shrink-0 w-24 sm:w-28 select-none">
             <div class="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-600 group-hover/item:scale-110 group-hover/item:bg-emerald-600 group-hover/item:text-white transition-all shadow-xs">
-              <i class="fa-solid fa-shapes text-2xl"></i>
+              <svg class="text-2xl inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h7v7H4V5zm9 0h7v7h-7V5zM4 14h7v5H4v-5zm9 0l3-2 4 4-4 4-3-2v-4z"/></svg>
             </div>
             <span class="text-xs sm:text-sm font-bold text-slate-700 mt-2 text-center leading-tight whitespace-nowrap">Roofing<br>Tools</span>
           </a>
@@ -665,7 +640,7 @@
           <!-- 5. Stairs Tools -->
           <a href="#popular-calculators" class="flex flex-col items-center justify-center p-3 rounded-2xl hover:bg-orange-50 group/item transition duration-150 shrink-0 w-24 sm:w-28 select-none">
             <div class="w-12 h-12 rounded-xl bg-stone-100 flex items-center justify-center text-amber-800 group-hover/item:scale-110 group-hover/item:bg-amber-800 group-hover/item:text-white transition-all shadow-xs">
-              <i class="fa-solid fa-stairs text-2xl"></i>
+              <svg class="text-2xl inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19h4v-4h4v-4h4V7h4v12H4z"/></svg>
             </div>
             <span class="text-xs sm:text-sm font-bold text-slate-700 mt-2 text-center leading-tight whitespace-nowrap">Stairs<br>Tools</span>
           </a>
@@ -673,7 +648,7 @@
           <!-- 6. Flooring Tools -->
           <a href="#popular-calculators" class="flex flex-col items-center justify-center p-3 rounded-2xl hover:bg-orange-50 group/item transition duration-150 shrink-0 w-24 sm:w-28 select-none">
             <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 group-hover/item:scale-110 group-hover/item:bg-blue-600 group-hover/item:text-white transition-all shadow-xs">
-              <i class="fa-solid fa-border-all text-2xl"></i>
+              <svg class="text-2xl inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4V4zm8 0v16M4 12h16"/></svg>
             </div>
             <span class="text-xs sm:text-sm font-bold text-slate-700 mt-2 text-center leading-tight whitespace-nowrap">Flooring<br>Tools</span>
           </a>
@@ -681,7 +656,7 @@
           <!-- 7. Fencing Tools -->
           <a href="#popular-calculators" class="flex flex-col items-center justify-center p-3 rounded-2xl hover:bg-orange-50 group/item transition duration-150 shrink-0 w-24 sm:w-28 select-none">
             <div class="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center text-amber-700 group-hover/item:scale-110 group-hover/item:bg-amber-700 group-hover/item:text-white transition-all shadow-xs">
-              <i class="fa-solid fa-grip-lines-vertical text-2xl"></i>
+              <svg class="text-2xl inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4v16M12 4v16M16 4v16"/></svg>
             </div>
             <span class="text-xs sm:text-sm font-bold text-slate-700 mt-2 text-center leading-tight whitespace-nowrap">Fencing<br>Tools</span>
           </a>
@@ -689,7 +664,7 @@
           <!-- 8. Measurement Tools -->
           <a href="#popular-calculators" class="flex flex-col items-center justify-center p-3 rounded-2xl hover:bg-orange-50 group/item transition duration-150 shrink-0 w-24 sm:w-28 select-none">
             <div class="w-12 h-12 rounded-xl bg-purple-50 flex items-center justify-center text-purple-600 group-hover/item:scale-110 group-hover/item:bg-purple-600 group-hover/item:text-white transition-all shadow-xs">
-              <i class="fa-solid fa-ruler-combined text-2xl"></i>
+              <svg class="text-2xl inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17L17 4l3 3L7 20l-3-3zm4-1 3 3m-1-7 3 3m-1-7 3 3"/></svg>
             </div>
             <span class="text-xs sm:text-sm font-bold text-slate-700 mt-2 text-center leading-tight whitespace-nowrap">Measurement<br>Tools</span>
           </a>
@@ -697,7 +672,7 @@
           <!-- 9. Unit Converters -->
           <a href="#popular-calculators" class="flex flex-col items-center justify-center p-3 rounded-2xl hover:bg-orange-50 group/item transition duration-150 shrink-0 w-24 sm:w-28 select-none">
             <div class="w-12 h-12 rounded-xl bg-sky-50 flex items-center justify-center text-sky-600 group-hover/item:scale-110 group-hover/item:bg-sky-600 group-hover/item:text-white transition-all shadow-xs">
-              <i class="fa-solid fa-arrows-rotate text-2xl"></i>
+              <svg class="text-2xl inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 0 0-14.9-3M4 5v4h4M4 13a8 8 0 0 0 14.9 3M20 19v-4h-4"/></svg>
             </div>
             <span class="text-xs sm:text-sm font-bold text-slate-700 mt-2 text-center leading-tight whitespace-nowrap">Unit<br>Converters</span>
           </a>
@@ -705,7 +680,7 @@
           <!-- 10. Guides & Resources -->
           <a href="#popular-calculators" class="flex flex-col items-center justify-center p-3 rounded-2xl hover:bg-orange-50 group/item transition duration-150 shrink-0 w-24 sm:w-28 select-none">
             <div class="w-12 h-12 rounded-xl bg-slate-100 flex items-center justify-center text-slate-700 group-hover/item:scale-110 group-hover/item:bg-slate-700 group-hover/item:text-white transition-all shadow-xs">
-              <i class="fa-solid fa-book-open text-2xl"></i>
+              <svg class="text-2xl inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5.5A3.5 3.5 0 0 1 6.5 2H11v17H6.5A3.5 3.5 0 0 0 3 22V5.5zm18 0A3.5 3.5 0 0 0 17.5 2H13v17h4.5A3.5 3.5 0 0 1 21 22V5.5z"/></svg>
             </div>
             <span class="text-xs sm:text-sm font-bold text-slate-700 mt-2 text-center leading-tight whitespace-nowrap">Guides<br>&amp; Resources</span>
           </a>
@@ -737,7 +712,7 @@
           <div>
             <div class="flex items-center gap-4 mb-3.5">
               <div class="w-14 h-14 rounded-2xl bg-red-500 text-white flex items-center justify-center shadow-md shrink-0">
-                <i class="fa-solid fa-bullseye text-2xl"></i>
+                <svg class="text-2xl inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zm0-4a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0-4a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/></svg>
               </div>
               <h4 class="font-extrabold text-slate-900 text-xl leading-tight">Save Time</h4>
             </div>
@@ -752,7 +727,7 @@
           <div>
             <div class="flex items-center gap-4 mb-3.5">
               <div class="w-14 h-14 rounded-2xl bg-emerald-500 text-white flex items-center justify-center shadow-md shrink-0">
-                <i class="fa-solid fa-dollar-sign text-2xl"></i>
+                <svg class="text-2xl inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M17 6.5C16 5 14.5 4 12.5 4 10 4 8 5.5 8 7.5c0 2 2 3 5 4 3 .9 4 2 4 4s-2 4-5 4c-2.2 0-4-1-5-2.5"/></svg>
               </div>
               <h4 class="font-extrabold text-slate-900 text-xl leading-tight">Reduce Waste</h4>
             </div>
@@ -767,7 +742,7 @@
           <div>
             <div class="flex items-center gap-4 mb-3.5">
               <div class="w-14 h-14 rounded-2xl bg-blue-600 text-white flex items-center justify-center shadow-md shrink-0">
-                <i class="fa-solid fa-check text-2xl"></i>
+                <svg class="text-2xl inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4L19 6"/></svg>
               </div>
               <h4 class="font-extrabold text-slate-900 text-xl leading-tight">Accurate Formulas</h4>
             </div>
@@ -782,7 +757,7 @@
           <div>
             <div class="flex items-center gap-4 mb-3.5">
               <div class="w-14 h-14 rounded-2xl bg-purple-600 text-white flex items-center justify-center shadow-md shrink-0">
-                <i class="fa-solid fa-wrench text-2xl"></i>
+                <svg class="text-2xl inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 6a5 5 0 0 0-6.5 6.5L3 17l4 4 4.5-4.5A5 5 0 0 0 18 10l-3 3-4-4 3-3z"/></svg>
               </div>
               <h4 class="font-extrabold text-slate-900 text-xl leading-tight">For Everyone</h4>
             </div>
@@ -802,7 +777,7 @@
       <div class="flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
         <div class="flex items-center gap-3">
           <div class="text-orange-600 text-2xl font-bold">
-            <i class="fa-solid fa-compass-drafting"></i>
+            <svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19l15-15M8 20l12-12M3 21h18M6 17l3 3M15 6l3 3"/></svg>
           </div>
           <p class="text-sm sm:text-base font-semibold text-slate-700">
             BuildCalcPro &copy; 2026 &bull; All calculations are estimates based on standard building formulas.
@@ -832,7 +807,7 @@
           </div>
         </div>
         <button onclick="closeModal()" aria-label="Close modal" class="w-9 h-9 rounded-xl bg-slate-800 text-slate-300 hover:text-white flex items-center justify-center transition">
-          <i class="fa-solid fa-xmark text-lg"></i>
+          <svg class="text-lg inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
         </button>
       </div>
 
@@ -843,7 +818,7 @@
         </div>
 
         <button onclick="calculateModalResult()" class="w-full mt-6 py-3.5 bg-orange-600 hover:bg-orange-700 active:bg-orange-800 text-white font-extrabold rounded-xl shadow-md transition duration-150 flex items-center justify-center gap-2.5 cursor-pointer text-base sm:text-lg">
-          <i class="fa-solid fa-calculator"></i>
+          <svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2h12v20H6V2zm3 3h6v4H9V5zm0 8h2m2 0h2m-6 4h2m2 0h2"/></svg>
           Calculate Results
         </button>
 
@@ -872,12 +847,10 @@
       const icon = document.getElementById('hamburger-icon');
       if (menu.classList.contains('hidden')) {
         menu.classList.remove('hidden');
-        icon.classList.remove('fa-bars');
-        icon.classList.add('fa-xmark');
+        icon.innerHTML = '<path d="M6 6l12 12M18 6L6 18"/>';
       } else {
         menu.classList.add('hidden');
-        icon.classList.remove('fa-xmark');
-        icon.classList.add('fa-bars');
+        icon.innerHTML = '<path d="M4 6h16M4 12h16M4 18h16"/>';
       }
     }
 
@@ -1106,7 +1079,7 @@
     const calculatorConfigs = {
       concrete: {
         title: "Concrete Slab Calculator",
-        icon: '<i class="fa-solid fa-truck-monster text-lg"></i>',
+        icon: '<svg class="text-lg inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h11v9H3V7zm11 3h4l3 3v3h-7v-6zM7 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm11 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4"/></svg>',
         inputs: [
           { id: 'c_length', label: 'Length (ft)', type: 'number', default: '20' },
           { id: 'c_width', label: 'Width (ft)', type: 'number', default: '10' },
@@ -1129,7 +1102,7 @@
       },
       cement: {
         title: "Cement & Mortar Mix Calculator",
-        icon: '<i class="fa-solid fa-bag-shopping text-lg"></i>',
+        icon: '<svg class="text-lg inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8h12l1 12H5L6 8zm3 0a3 3 0 0 1 6 0"/></svg>',
         inputs: [
           { id: 'cm_area', label: 'Surface Area (sq ft)', type: 'number', default: '150' },
           { id: 'cm_thickness', label: 'Layer Thickness (inches)', type: 'number', default: '0.5' },
@@ -1153,7 +1126,7 @@
       },
       sand: {
         title: "Sand Quantity & Cost",
-        icon: '<i class="fa-solid fa-mountain text-lg"></i>',
+        icon: '<svg class="text-lg inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20l6-10 4 6 3-5 5 9H3zm6-10 2-3 2 3"/></svg>',
         inputs: [
           { id: 's_len', label: 'Length (ft)', type: 'number', default: '12' },
           { id: 's_wid', label: 'Width (ft)', type: 'number', default: '10' },
@@ -1172,7 +1145,7 @@
       },
       gravel: {
         title: "Gravel & Aggregate Calculator",
-        icon: '<i class="fa-solid fa-cubes-stacked text-lg"></i>',
+        icon: '<svg class="text-lg inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3l5 3v6l-5 3-5-3V6l5-3zm8 6l5 3v6l-5 3-5-3v-6l5-3"/></svg>',
         inputs: [
           { id: 'g_len', label: 'Driveway Length (ft)', type: 'number', default: '30' },
           { id: 'g_wid', label: 'Width (ft)', type: 'number', default: '10' },
@@ -1191,7 +1164,7 @@
       },
       brick: {
         title: "Brick Calculator",
-        icon: '<i class="fa-solid fa-shapes text-lg"></i>',
+        icon: '<svg class="text-lg inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h7v7H4V5zm9 0h7v7h-7V5zM4 14h7v5H4v-5zm9 0l3-2 4 4-4 4-3-2v-4z"/></svg>',
         inputs: [
           { id: 'b_length', label: 'Wall Length (ft)', type: 'number', default: '25' },
           { id: 'b_height', label: 'Wall Height (ft)', type: 'number', default: '6' },
@@ -1209,7 +1182,7 @@
       },
       block: {
         title: "Block Calculator (CMU)",
-        icon: '<i class="fa-solid fa-cube text-lg"></i>',
+        icon: '<svg class="text-lg inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3zm0 0v9m8-4.5l-8 4.5-8-4.5"/></svg>',
         inputs: [
           { id: 'bl_len', label: 'Wall Length (ft)', type: 'number', default: '40' },
           { id: 'bl_hgt', label: 'Wall Height (ft)', type: 'number', default: '8' },
@@ -1227,7 +1200,7 @@
       },
       paint: {
         title: "Paint Coverage Calculator",
-        icon: '<i class="fa-solid fa-paint-roller text-lg"></i>',
+        icon: '<svg class="text-lg inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h11a2 2 0 0 1 2 2v3H7V7H4V5zm5 7h6v10H9V12z"/></svg>',
         inputs: [
           { id: 'p_length', label: 'Perimeter / Wall Length (ft)', type: 'number', default: '45' },
           { id: 'p_height', label: 'Wall Height (ft)', type: 'number', default: '9' },
@@ -1246,7 +1219,7 @@
       },
       tile: {
         title: "Tile Calculator",
-        icon: '<i class="fa-solid fa-table-cells-large text-lg"></i>',
+        icon: '<svg class="text-lg inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4V4zm8 0v16M4 12h16"/></svg>',
         inputs: [
           { id: 't_area', label: 'Floor Area (sq ft)', type: 'number', default: '140' },
           { id: 't_size', label: 'Square Tile Size (inches)', type: 'number', default: '12' },
@@ -1267,7 +1240,7 @@
       },
       roofing: {
         title: "Roofing Materials Calculator",
-        icon: '<i class="fa-solid fa-house-chimney text-lg"></i>',
+        icon: '<svg class="text-lg inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8v9H3v-9zm5 9v-6h8v6M9 8h6"/></svg>',
         inputs: [
           { id: 'r_area', label: 'Roof Footprint Area (sq ft)', type: 'number', default: '1800' },
           { id: 'r_rise', label: 'Roof Rise per 12 in (e.g. 6 for 6:12)', type: 'number', default: '6' },
@@ -1288,7 +1261,7 @@
       },
       stair: {
         title: "Stair Calculator",
-        icon: '<i class="fa-solid fa-stairs text-lg"></i>',
+        icon: '<svg class="text-lg inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19h4v-4h4v-4h4V7h4v12H4z"/></svg>',
         inputs: [
           { id: 'st_rise', label: 'Total Rise / Height (inches)', type: 'number', default: '108' },
           { id: 'st_ideal', label: 'Target Riser Height (inches)', type: 'number', default: '7.5' },
@@ -1311,7 +1284,7 @@
       },
       rebar: {
         title: "Rebar Calculator",
-        icon: '<i class="fa-solid fa-bars-staggered text-lg"></i>',
+        icon: '<svg class="text-lg inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5v14"/></svg>',
         inputs: [
           { id: 'rb_len', label: 'Slab Length (ft)', type: 'number', default: '30' },
           { id: 'rb_wid', label: 'Slab Width (ft)', type: 'number', default: '20' },
@@ -1332,7 +1305,7 @@
       },
       fence: {
         title: "Fence Calculator",
-        icon: '<i class="fa-solid fa-bars text-lg"></i>',
+        icon: '<svg class="text-lg inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>',
         inputs: [
           { id: 'f_length', label: 'Fence Run (linear ft)', type: 'number', default: '120' },
           { id: 'f_post_space', label: 'Post Spacing (ft)', type: 'number', default: '8' },
