@@ -53,7 +53,7 @@
       background-color: #f8fafc;
     }
 
-    /* Hide scrollbars cleanly */
+    /* Hide scrollbar on category carousel */
     .no-scrollbar::-webkit-scrollbar {
       display: none;
     }
@@ -72,12 +72,20 @@
       }
     }
 
-    /* Card hover interactions */
+    /* Subtle hover pop */
     .calc-card:hover .svg-icon-wrap {
       transform: scale(1.08) translateY(-2px);
     }
     .svg-icon-wrap {
       transition: transform 0.22s ease-out;
+    }
+
+
+    /* Premium polish */
+    .calc-card { min-height: 104px; }
+    .hero-copy { text-wrap: balance; }
+    @media (max-width: 767px) {
+      .calc-card { min-height: 92px; }
     }
 
     /* Ping-pong interactive category viewport */
@@ -98,33 +106,6 @@
     .category-scroll-viewport {
       -ms-overflow-style: none;
       scrollbar-width: none;
-    }
-
-    /* Custom form input look */
-    .custom-input {
-      width: 100%;
-      padding: 0.625rem 0.875rem;
-      background-color: #f8fafc;
-      border: 1px solid #cbd5e1;
-      border-radius: 0.75rem;
-      font-weight: 600;
-      color: #0f172a;
-      transition: all 0.15s ease-in-out;
-    }
-    .custom-input:focus {
-      background-color: #ffffff;
-      outline: none;
-      border-color: #ea580c;
-      box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.15);
-    }
-    .custom-label {
-      display: block;
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: #475569;
-      text-transform: uppercase;
-      letter-spacing: 0.025em;
-      margin-bottom: 0.375rem;
     }
   </style>
 </head>
@@ -165,10 +146,10 @@
           <!-- Dropdown menu -->
           <div class="absolute left-0 top-full pt-2 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200">
             <div class="w-68 bg-white rounded-xl shadow-2xl border border-slate-100 py-3 text-sm font-medium">
-              <a href="#popular-calculators" onclick="openModal('concrete')" class="block px-5 py-2.5 hover:bg-orange-50 hover:text-orange-600 transition">Concrete, Cement &amp; Aggregates</a>
-              <a href="#popular-calculators" onclick="openModal('brick')" class="block px-5 py-2.5 hover:bg-orange-50 hover:text-orange-600 transition">Masonry, Bricks &amp; Blocks</a>
-              <a href="#popular-calculators" onclick="openModal('roofing')" class="block px-5 py-2.5 hover:bg-orange-50 hover:text-orange-600 transition">Roofing &amp; Stairs Framing</a>
-              <a href="#popular-calculators" onclick="openModal('paint')" class="block px-5 py-2.5 hover:bg-orange-50 hover:text-orange-600 transition">Painting, Tiles &amp; Fencing</a>
+              <a href="#popular-calculators" class="block px-5 py-2.5 hover:bg-orange-50 hover:text-orange-600 transition">Concrete, Cement &amp; Aggregates</a>
+              <a href="#popular-calculators" class="block px-5 py-2.5 hover:bg-orange-50 hover:text-orange-600 transition">Masonry, Bricks &amp; Blocks</a>
+              <a href="#popular-calculators" class="block px-5 py-2.5 hover:bg-orange-50 hover:text-orange-600 transition">Roofing &amp; Stairs Framing</a>
+              <a href="#popular-calculators" class="block px-5 py-2.5 hover:bg-orange-50 hover:text-orange-600 transition">Painting, Tiles &amp; Fencing</a>
             </div>
           </div>
         </div>
@@ -180,7 +161,7 @@
 
       <!-- Search in Header & Mobile menu toggle -->
       <div class="flex items-center gap-3">
-        <div class="relative hidden sm:block w-52 md:w-64 lg:w-76">
+        <div class="relative hidden md:block w-52 lg:w-64">
           <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-base"></i>
           <input 
             type="text" 
@@ -195,7 +176,7 @@
           id="hamburger-btn"
           onclick="toggleMobileMenu()" 
           aria-label="Toggle Navigation" 
-          class="p-3 rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-orange-500 cursor-pointer"
+          class="xl:hidden p-3 rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-orange-500"
         >
           <i id="hamburger-icon" class="fa-solid fa-bars text-xl w-6 h-6 flex items-center justify-center"></i>
         </button>
@@ -224,12 +205,12 @@
   </header>
 
   <!-- ======================== 2. HERO SECTION ======================== -->
-  <section class="relative bg-gradient-to-r from-sky-100 via-sky-50 to-amber-50/50 border-b border-slate-200 w-full overflow-hidden min-h-[440px] sm:min-h-[520px] lg:min-h-[580px] flex items-center">
+  <section class="relative bg-gradient-to-r from-sky-100 via-sky-50 to-amber-50/50 border-b border-slate-200 w-full overflow-hidden min-h-[430px] sm:min-h-[500px] lg:min-h-[540px] flex items-center">
     
     <!-- BACKGROUND OVERLAY LAYER: High-res authentic framing photo on right -->
     <div class="absolute inset-y-0 right-0 w-full lg:w-3/5 pointer-events-none select-none overflow-hidden z-0">
       
-      <!-- Primary Photographic Image (Residential wooden framing & trusses) -->
+      <!-- Primary Photographic Image (High-resolution residential wooden framing & trusses) -->
       <img 
         src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=85" 
         alt="Residential timber frame house construction"
@@ -242,22 +223,13 @@
       <div class="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-sky-100/80 to-transparent"></div>
       <div class="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-slate-200/60 to-transparent"></div>
       
-      <!-- TILTED HERO BADGE: Anchored directly onto construction site overlay -->
-      <div class="absolute right-4 sm:right-8 lg:right-12 bottom-6 sm:bottom-8 lg:bottom-10 z-10 pointer-events-auto hero-badge-angle max-w-[190px] sm:max-w-[240px] lg:max-w-[280px]">
-        <div class="bg-slate-950/95 border-2 border-orange-500 text-white p-3 sm:p-4 rounded-2xl shadow-2xl backdrop-blur-md relative overflow-hidden select-none">
-          <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-orange-500 via-amber-400 to-orange-600"></div>
-          <div class="text-base sm:text-2xl font-black uppercase tracking-tight text-white leading-tight">
-            Plan
+      <!-- SIMPLE TRUST CALLOUT -->
+      <div class="absolute right-4 sm:right-8 lg:right-12 bottom-5 sm:bottom-8 lg:bottom-10 z-10 max-w-[230px] sm:max-w-[270px]">
+        <div class="bg-white/95 border border-white/80 text-slate-900 p-4 sm:p-5 rounded-2xl shadow-xl backdrop-blur-md">
+          <div class="flex items-center gap-2 text-orange-600 font-extrabold text-sm uppercase tracking-wide">
+            <i class="fa-solid fa-ruler-combined"></i> Built for real projects
           </div>
-          <div class="text-base sm:text-2xl font-black uppercase tracking-tight text-amber-400 leading-tight">
-            Calculate
-          </div>
-          <div class="text-base sm:text-2xl font-black uppercase tracking-tight text-white leading-tight">
-            Build
-          </div>
-          <div class="mt-1.5 bg-gradient-to-r from-orange-600 to-amber-500 text-white font-black text-sm sm:text-lg lg:text-xl italic px-3 py-1 rounded-lg shadow text-center tracking-wide">
-            Smarter
-          </div>
+          <p class="mt-1.5 text-sm sm:text-base font-semibold leading-snug text-slate-700">Estimate quantities, dimensions and materials in seconds.</p>
         </div>
       </div>
 
@@ -267,13 +239,13 @@
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 lg:py-20 w-full z-10">
       <div class="max-w-xl lg:max-w-2xl">
         
-        <!-- BOLD HERO TITLE -->
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 leading-[1.12] drop-shadow-sm">
+        <!-- BIGGER HERO TITLE -->
+        <h1 class="hero-copy text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 leading-[1.12] drop-shadow-sm">
           Free Construction <br class="hidden sm:inline">
           <span class="text-orange-600">Calculators &amp; Tools</span>
         </h1>
         
-        <!-- BOLD HERO SUBTITLE -->
+        <!-- BIGGER HERO SUBTITLE -->
         <p class="mt-4 sm:mt-5 text-base sm:text-xl text-slate-700 font-medium leading-relaxed max-w-xl">
           Estimate materials, sizes, quantities and costs for your construction projects. Fast, accurate and easy to use.
         </p>
@@ -298,7 +270,7 @@
           </button>
         </div>
 
-        <!-- 3 Feature Badges -->
+        <!-- 3 Feature Badges (Larger typography) -->
         <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-slate-200/80 w-full max-w-xl">
           
           <!-- Badge 1 -->
@@ -340,16 +312,30 @@
     </div>
   </section>
 
+  <!-- ======================== TRUST STRIP ======================== -->
+  <section class="bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 text-center lg:text-left">
+        <div class="flex items-center justify-center lg:justify-start gap-2.5 text-sm font-bold text-slate-700"><i class="fa-solid fa-check-circle text-emerald-500"></i> Free to use</div>
+        <div class="flex items-center justify-center lg:justify-start gap-2.5 text-sm font-bold text-slate-700"><i class="fa-solid fa-mobile-screen text-blue-500"></i> Works on any device</div>
+        <div class="flex items-center justify-center lg:justify-start gap-2.5 text-sm font-bold text-slate-700"><i class="fa-solid fa-calculator text-orange-500"></i> Instant calculations</div>
+        <div class="flex items-center justify-center lg:justify-start gap-2.5 text-sm font-bold text-slate-700"><i class="fa-solid fa-user-shield text-slate-500"></i> No signup required</div>
+      </div>
+    </div>
+  </section>
+
   <!-- ======================== 3. POPULAR CALCULATORS ======================== -->
   <main id="popular-calculators" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 w-full">
     
     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-6 mb-8 sm:mb-10">
       <div>
-        <h2 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">Popular Construction Calculators</h2>
-        <p class="text-base sm:text-lg text-slate-600 mt-1.5">Click any calculator to launch its interactive calculation pop-up.</p>
+        <!-- BIGGER SECTION TITLE -->
+        <div class="flex items-center gap-3 mb-2"><span class="w-10 h-1 rounded-full bg-orange-600"></span><span class="text-sm font-extrabold uppercase tracking-widest text-orange-600">Tools &amp; Calculators</span></div>
+        <h2 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">Construction calculators</h2>
+        <p class="text-base sm:text-lg text-slate-600 mt-1.5">Quickly estimate materials, quantities and project requirements.</p>
       </div>
       <a href="#popular-calculators" class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-black text-base group self-start sm:self-auto">
-        View All 12 Calculators
+        View All Calculators
         <i class="fa-solid fa-arrow-right text-sm group-hover:translate-x-1.5 transition-transform"></i>
       </a>
     </div>
@@ -358,7 +344,7 @@
     <div id="calculators-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 w-full">
       
       <!-- 1. Concrete Calculator -->
-      <div onclick="openModal('concrete')" class="calc-card bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-card hover:shadow-card-hover hover:border-orange-400 cursor-pointer transition-all duration-200 flex items-center justify-between group">
+      <div onclick="openModal('concrete')" class="calc-card bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-card hover:shadow-card-hover hover:border-orange-300 hover:-translate-y-0.5 cursor-pointer transition-all duration-200 flex items-center justify-between group">
         <div class="flex items-center gap-4 min-w-0">
           <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-orange-50 border border-orange-100 flex items-center justify-center shrink-0 p-1 svg-icon-wrap">
             <svg viewBox="0 0 64 64" class="w-11 h-11 sm:w-13 sm:h-13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -383,7 +369,7 @@
       </div>
 
       <!-- 2. Cement Calculator -->
-      <div onclick="openModal('cement')" class="calc-card bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-card hover:shadow-card-hover hover:border-orange-400 cursor-pointer transition-all duration-200 flex items-center justify-between group">
+      <div onclick="openModal('cement')" class="calc-card bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-card hover:shadow-card-hover hover:border-orange-300 hover:-translate-y-0.5 cursor-pointer transition-all duration-200 flex items-center justify-between group">
         <div class="flex items-center gap-4 min-w-0">
           <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-amber-50 border border-amber-100 flex items-center justify-center shrink-0 p-1 svg-icon-wrap">
             <svg viewBox="0 0 64 64" class="w-11 h-11 sm:w-13 sm:h-13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -406,7 +392,7 @@
       </div>
 
       <!-- 3. Sand Calculator -->
-      <div onclick="openModal('sand')" class="calc-card bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-card hover:shadow-card-hover hover:border-orange-400 cursor-pointer transition-all duration-200 flex items-center justify-between group">
+      <div onclick="openModal('sand')" class="calc-card bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-card hover:shadow-card-hover hover:border-orange-300 hover:-translate-y-0.5 cursor-pointer transition-all duration-200 flex items-center justify-between group">
         <div class="flex items-center gap-4 min-w-0">
           <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-yellow-50 border border-yellow-100 flex items-center justify-center shrink-0 p-1 svg-icon-wrap">
             <svg viewBox="0 0 64 64" class="w-11 h-11 sm:w-13 sm:h-13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -428,7 +414,7 @@
       </div>
 
       <!-- 4. Gravel Calculator -->
-      <div onclick="openModal('gravel')" class="calc-card bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-card hover:shadow-card-hover hover:border-orange-400 cursor-pointer transition-all duration-200 flex items-center justify-between group">
+      <div onclick="openModal('gravel')" class="calc-card bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-card hover:shadow-card-hover hover:border-orange-300 hover:-translate-y-0.5 cursor-pointer transition-all duration-200 flex items-center justify-between group">
         <div class="flex items-center gap-4 min-w-0">
           <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center shrink-0 p-1 svg-icon-wrap">
             <svg viewBox="0 0 64 64" class="w-11 h-11 sm:w-13 sm:h-13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -453,7 +439,7 @@
       </div>
 
       <!-- 5. Brick Calculator -->
-      <div onclick="openModal('brick')" class="calc-card bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-card hover:shadow-card-hover hover:border-orange-400 cursor-pointer transition-all duration-200 flex items-center justify-between group">
+      <div onclick="openModal('brick')" class="calc-card bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-card hover:shadow-card-hover hover:border-orange-300 hover:-translate-y-0.5 cursor-pointer transition-all duration-200 flex items-center justify-between group">
         <div class="flex items-center gap-4 min-w-0">
           <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-red-50 border border-red-100 flex items-center justify-center shrink-0 p-1 svg-icon-wrap">
             <svg viewBox="0 0 64 64" class="w-11 h-11 sm:w-13 sm:h-13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -474,7 +460,7 @@
       </div>
 
       <!-- 6. Block Calculator -->
-      <div onclick="openModal('block')" class="calc-card bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-card hover:shadow-card-hover hover:border-orange-400 cursor-pointer transition-all duration-200 flex items-center justify-between group">
+      <div onclick="openModal('block')" class="calc-card bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-card hover:shadow-card-hover hover:border-orange-300 hover:-translate-y-0.5 cursor-pointer transition-all duration-200 flex items-center justify-between group">
         <div class="flex items-center gap-4 min-w-0">
           <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-zinc-100 border border-zinc-200 flex items-center justify-center shrink-0 p-1 svg-icon-wrap">
             <svg viewBox="0 0 64 64" class="w-11 h-11 sm:w-13 sm:h-13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -495,7 +481,7 @@
       </div>
 
       <!-- 7. Paint Calculator -->
-      <div onclick="openModal('paint')" class="calc-card bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-card hover:shadow-card-hover hover:border-orange-400 cursor-pointer transition-all duration-200 flex items-center justify-between group">
+      <div onclick="openModal('paint')" class="calc-card bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-card hover:shadow-card-hover hover:border-orange-300 hover:-translate-y-0.5 cursor-pointer transition-all duration-200 flex items-center justify-between group">
         <div class="flex items-center gap-4 min-w-0">
           <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-sky-50 border border-sky-100 flex items-center justify-center shrink-0 p-1 svg-icon-wrap">
             <svg viewBox="0 0 64 64" class="w-11 h-11 sm:w-13 sm:h-13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -518,7 +504,7 @@
       </div>
 
       <!-- 8. Tile Calculator -->
-      <div onclick="openModal('tile')" class="calc-card bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-card hover:shadow-card-hover hover:border-orange-400 cursor-pointer transition-all duration-200 flex items-center justify-between group">
+      <div onclick="openModal('tile')" class="calc-card bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-card hover:shadow-card-hover hover:border-orange-300 hover:-translate-y-0.5 cursor-pointer transition-all duration-200 flex items-center justify-between group">
         <div class="flex items-center gap-4 min-w-0">
           <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-teal-50 border border-teal-100 flex items-center justify-center shrink-0 p-1 svg-icon-wrap">
             <svg viewBox="0 0 64 64" class="w-11 h-11 sm:w-13 sm:h-13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -538,7 +524,7 @@
       </div>
 
       <!-- 9. Roofing Calculator -->
-      <div onclick="openModal('roofing')" class="calc-card bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-card hover:shadow-card-hover hover:border-orange-400 cursor-pointer transition-all duration-200 flex items-center justify-between group">
+      <div onclick="openModal('roofing')" class="calc-card bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-card hover:shadow-card-hover hover:border-orange-300 hover:-translate-y-0.5 cursor-pointer transition-all duration-200 flex items-center justify-between group">
         <div class="flex items-center gap-4 min-w-0">
           <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-orange-50 border border-orange-100 flex items-center justify-center shrink-0 p-1 svg-icon-wrap">
             <svg viewBox="0 0 64 64" class="w-11 h-11 sm:w-13 sm:h-13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -562,7 +548,7 @@
       </div>
 
       <!-- 10. Stair Calculator -->
-      <div onclick="openModal('stair')" class="calc-card bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-card hover:shadow-card-hover hover:border-orange-400 cursor-pointer transition-all duration-200 flex items-center justify-between group">
+      <div onclick="openModal('stair')" class="calc-card bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-card hover:shadow-card-hover hover:border-orange-300 hover:-translate-y-0.5 cursor-pointer transition-all duration-200 flex items-center justify-between group">
         <div class="flex items-center gap-4 min-w-0">
           <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-stone-100 border border-stone-200 flex items-center justify-center shrink-0 p-1 svg-icon-wrap">
             <svg viewBox="0 0 64 64" class="w-11 h-11 sm:w-13 sm:h-13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -582,7 +568,7 @@
       </div>
 
       <!-- 11. Rebar Calculator -->
-      <div onclick="openModal('rebar')" class="calc-card bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-card hover:shadow-card-hover hover:border-orange-400 cursor-pointer transition-all duration-200 flex items-center justify-between group">
+      <div onclick="openModal('rebar')" class="calc-card bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-card hover:shadow-card-hover hover:border-orange-300 hover:-translate-y-0.5 cursor-pointer transition-all duration-200 flex items-center justify-between group">
         <div class="flex items-center gap-4 min-w-0">
           <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center shrink-0 p-1 svg-icon-wrap">
             <svg viewBox="0 0 64 64" class="w-11 h-11 sm:w-13 sm:h-13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -602,7 +588,7 @@
       </div>
 
       <!-- 12. Fence Calculator -->
-      <div onclick="openModal('fence')" class="calc-card bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-card hover:shadow-card-hover hover:border-orange-400 cursor-pointer transition-all duration-200 flex items-center justify-between group">
+      <div onclick="openModal('fence')" class="calc-card bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-card hover:shadow-card-hover hover:border-orange-300 hover:-translate-y-0.5 cursor-pointer transition-all duration-200 flex items-center justify-between group">
         <div class="flex items-center gap-4 min-w-0">
           <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center shrink-0 p-1 svg-icon-wrap">
             <svg viewBox="0 0 64 64" class="w-11 h-11 sm:w-13 sm:h-13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -631,21 +617,21 @@
       </div>
       <h4 class="font-bold text-slate-800 text-base">No calculators match your search</h4>
       <p class="text-slate-500 text-sm mt-1">Try searching for concrete, sand, paint, brick, tile, stairs, rebar or fence.</p>
-      <button onclick="clearSearch()" class="mt-4 px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-sm font-bold transition cursor-pointer">
+      <button onclick="clearSearch()" class="mt-4 px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-sm font-bold transition">
         Reset Search Filter
       </button>
     </div>
 
   </main>
 
-  <!-- ======================== 4. FIXED CATEGORY NAV STRIP WITH PING-PONG AUTO-SCROLL ======================== -->
+  <!-- ======================== 4. FIXED CATEGORY NAV STRIP WITH PING-PONG AUTO-SCROLL & ARROW INDICATORS ======================== -->
   <section id="category-nav" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 w-full">
     <div class="relative bg-white rounded-2xl border border-slate-200 shadow-sm p-2 sm:p-3 w-full overflow-hidden group">
       
-      <!-- LEFT GRADIENT MASK -->
+      <!-- LEFT GRADIENT MASK (Fades in dynamically when scrollLeft > 5) -->
       <div id="catGradientLeft" class="absolute left-0 top-0 bottom-0 w-16 sm:w-20 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none transition-opacity duration-300 opacity-0"></div>
 
-      <!-- RIGHT GRADIENT MASK -->
+      <!-- RIGHT GRADIENT MASK (Fades in dynamically when there is unseen content to the right) -->
       <div id="catGradientRight" class="absolute right-0 top-0 bottom-0 w-16 sm:w-20 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none transition-opacity duration-300 opacity-100"></div>
 
       <!-- LEFT NAVIGATION ARROW BUTTON -->
@@ -673,84 +659,84 @@
         <div id="categoryTrack" class="flex items-center gap-2 sm:gap-4 py-1 w-max px-2 sm:px-4">
         
           <!-- 1. Concrete Tools -->
-          <button onclick="openModal('concrete')" class="flex flex-col items-center justify-center p-3 rounded-2xl hover:bg-orange-50 group/item transition duration-150 shrink-0 w-24 sm:w-28 select-none cursor-pointer">
+          <a href="#popular-calculators" class="flex flex-col items-center justify-center p-3 rounded-2xl hover:bg-orange-50 group/item transition duration-150 shrink-0 w-24 sm:w-28 select-none">
             <div class="w-12 h-12 rounded-xl bg-orange-50 flex items-center justify-center text-orange-600 group-hover/item:scale-110 group-hover/item:bg-orange-600 group-hover/item:text-white transition-all shadow-xs">
               <i class="fa-solid fa-house-chimney text-2xl"></i>
             </div>
             <span class="text-xs sm:text-sm font-bold text-slate-700 mt-2 text-center leading-tight whitespace-nowrap">Concrete<br>Tools</span>
-          </button>
+          </a>
 
           <!-- 2. Masonry Tools -->
-          <button onclick="openModal('brick')" class="flex flex-col items-center justify-center p-3 rounded-2xl hover:bg-orange-50 group/item transition duration-150 shrink-0 w-24 sm:w-28 select-none cursor-pointer">
+          <a href="#popular-calculators" class="flex flex-col items-center justify-center p-3 rounded-2xl hover:bg-orange-50 group/item transition duration-150 shrink-0 w-24 sm:w-28 select-none">
             <div class="w-12 h-12 rounded-xl bg-slate-100 flex items-center justify-center text-slate-700 group-hover/item:scale-110 group-hover/item:bg-slate-800 group-hover/item:text-white transition-all shadow-xs">
               <i class="fa-solid fa-cubes text-2xl"></i>
             </div>
             <span class="text-xs sm:text-sm font-bold text-slate-700 mt-2 text-center leading-tight whitespace-nowrap">Masonry<br>Tools</span>
-          </button>
+          </a>
 
           <!-- 3. Painting Tools -->
-          <button onclick="openModal('paint')" class="flex flex-col items-center justify-center p-3 rounded-2xl hover:bg-orange-50 group/item transition duration-150 shrink-0 w-24 sm:w-28 select-none cursor-pointer">
+          <a href="#popular-calculators" class="flex flex-col items-center justify-center p-3 rounded-2xl hover:bg-orange-50 group/item transition duration-150 shrink-0 w-24 sm:w-28 select-none">
             <div class="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center text-amber-500 group-hover/item:scale-110 group-hover/item:bg-amber-500 group-hover/item:text-white transition-all shadow-xs">
               <i class="fa-solid fa-paint-roller text-2xl"></i>
             </div>
             <span class="text-xs sm:text-sm font-bold text-slate-700 mt-2 text-center leading-tight whitespace-nowrap">Painting<br>Tools</span>
-          </button>
+          </a>
 
           <!-- 4. Roofing Tools -->
-          <button onclick="openModal('roofing')" class="flex flex-col items-center justify-center p-3 rounded-2xl hover:bg-orange-50 group/item transition duration-150 shrink-0 w-24 sm:w-28 select-none cursor-pointer">
+          <a href="#popular-calculators" class="flex flex-col items-center justify-center p-3 rounded-2xl hover:bg-orange-50 group/item transition duration-150 shrink-0 w-24 sm:w-28 select-none">
             <div class="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-600 group-hover/item:scale-110 group-hover/item:bg-emerald-600 group-hover/item:text-white transition-all shadow-xs">
               <i class="fa-solid fa-shapes text-2xl"></i>
             </div>
             <span class="text-xs sm:text-sm font-bold text-slate-700 mt-2 text-center leading-tight whitespace-nowrap">Roofing<br>Tools</span>
-          </button>
+          </a>
 
           <!-- 5. Stairs Tools -->
-          <button onclick="openModal('stair')" class="flex flex-col items-center justify-center p-3 rounded-2xl hover:bg-orange-50 group/item transition duration-150 shrink-0 w-24 sm:w-28 select-none cursor-pointer">
+          <a href="#popular-calculators" class="flex flex-col items-center justify-center p-3 rounded-2xl hover:bg-orange-50 group/item transition duration-150 shrink-0 w-24 sm:w-28 select-none">
             <div class="w-12 h-12 rounded-xl bg-stone-100 flex items-center justify-center text-amber-800 group-hover/item:scale-110 group-hover/item:bg-amber-800 group-hover/item:text-white transition-all shadow-xs">
               <i class="fa-solid fa-stairs text-2xl"></i>
             </div>
             <span class="text-xs sm:text-sm font-bold text-slate-700 mt-2 text-center leading-tight whitespace-nowrap">Stairs<br>Tools</span>
-          </button>
+          </a>
 
           <!-- 6. Flooring Tools -->
-          <button onclick="openModal('tile')" class="flex flex-col items-center justify-center p-3 rounded-2xl hover:bg-orange-50 group/item transition duration-150 shrink-0 w-24 sm:w-28 select-none cursor-pointer">
+          <a href="#popular-calculators" class="flex flex-col items-center justify-center p-3 rounded-2xl hover:bg-orange-50 group/item transition duration-150 shrink-0 w-24 sm:w-28 select-none">
             <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 group-hover/item:scale-110 group-hover/item:bg-blue-600 group-hover/item:text-white transition-all shadow-xs">
               <i class="fa-solid fa-border-all text-2xl"></i>
             </div>
             <span class="text-xs sm:text-sm font-bold text-slate-700 mt-2 text-center leading-tight whitespace-nowrap">Flooring<br>Tools</span>
-          </button>
+          </a>
 
           <!-- 7. Fencing Tools -->
-          <button onclick="openModal('fence')" class="flex flex-col items-center justify-center p-3 rounded-2xl hover:bg-orange-50 group/item transition duration-150 shrink-0 w-24 sm:w-28 select-none cursor-pointer">
+          <a href="#popular-calculators" class="flex flex-col items-center justify-center p-3 rounded-2xl hover:bg-orange-50 group/item transition duration-150 shrink-0 w-24 sm:w-28 select-none">
             <div class="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center text-amber-700 group-hover/item:scale-110 group-hover/item:bg-amber-700 group-hover/item:text-white transition-all shadow-xs">
               <i class="fa-solid fa-grip-lines-vertical text-2xl"></i>
             </div>
             <span class="text-xs sm:text-sm font-bold text-slate-700 mt-2 text-center leading-tight whitespace-nowrap">Fencing<br>Tools</span>
-          </button>
+          </a>
 
           <!-- 8. Measurement Tools -->
-          <button onclick="openModal('rebar')" class="flex flex-col items-center justify-center p-3 rounded-2xl hover:bg-orange-50 group/item transition duration-150 shrink-0 w-24 sm:w-28 select-none cursor-pointer">
+          <a href="#popular-calculators" class="flex flex-col items-center justify-center p-3 rounded-2xl hover:bg-orange-50 group/item transition duration-150 shrink-0 w-24 sm:w-28 select-none">
             <div class="w-12 h-12 rounded-xl bg-purple-50 flex items-center justify-center text-purple-600 group-hover/item:scale-110 group-hover/item:bg-purple-600 group-hover/item:text-white transition-all shadow-xs">
               <i class="fa-solid fa-ruler-combined text-2xl"></i>
             </div>
             <span class="text-xs sm:text-sm font-bold text-slate-700 mt-2 text-center leading-tight whitespace-nowrap">Measurement<br>Tools</span>
-          </button>
+          </a>
 
           <!-- 9. Unit Converters -->
-          <button onclick="openModal('sand')" class="flex flex-col items-center justify-center p-3 rounded-2xl hover:bg-orange-50 group/item transition duration-150 shrink-0 w-24 sm:w-28 select-none cursor-pointer">
+          <a href="#popular-calculators" class="flex flex-col items-center justify-center p-3 rounded-2xl hover:bg-orange-50 group/item transition duration-150 shrink-0 w-24 sm:w-28 select-none">
             <div class="w-12 h-12 rounded-xl bg-sky-50 flex items-center justify-center text-sky-600 group-hover/item:scale-110 group-hover/item:bg-sky-600 group-hover/item:text-white transition-all shadow-xs">
               <i class="fa-solid fa-arrows-rotate text-2xl"></i>
             </div>
             <span class="text-xs sm:text-sm font-bold text-slate-700 mt-2 text-center leading-tight whitespace-nowrap">Unit<br>Converters</span>
-          </button>
+          </a>
 
           <!-- 10. Guides & Resources -->
-          <button onclick="openModal('gravel')" class="flex flex-col items-center justify-center p-3 rounded-2xl hover:bg-orange-50 group/item transition duration-150 shrink-0 w-24 sm:w-28 select-none cursor-pointer">
+          <a href="#popular-calculators" class="flex flex-col items-center justify-center p-3 rounded-2xl hover:bg-orange-50 group/item transition duration-150 shrink-0 w-24 sm:w-28 select-none">
             <div class="w-12 h-12 rounded-xl bg-slate-100 flex items-center justify-center text-slate-700 group-hover/item:scale-110 group-hover/item:bg-slate-700 group-hover/item:text-white transition-all shadow-xs">
               <i class="fa-solid fa-book-open text-2xl"></i>
             </div>
             <span class="text-xs sm:text-sm font-bold text-slate-700 mt-2 text-center leading-tight whitespace-nowrap">Guides<br>&amp; Resources</span>
-          </button>
+          </a>
 
         </div>
       </div>
@@ -774,7 +760,7 @@
       <!-- FULL-WIDTH 4-COLUMN GRID -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
         
-        <!-- Benefit 1: Save Time -->
+        <!-- Benefit 1: Save Time (Title placed directly on the right of logo) -->
         <div class="bg-slate-50/70 p-6 rounded-2xl border border-slate-100 flex flex-col justify-between hover:bg-orange-50/40 transition">
           <div>
             <div class="flex items-center gap-4 mb-3.5">
@@ -789,7 +775,7 @@
           </div>
         </div>
 
-        <!-- Benefit 2: Reduce Waste -->
+        <!-- Benefit 2: Reduce Waste (Title placed directly on the right of logo) -->
         <div class="bg-slate-50/70 p-6 rounded-2xl border border-slate-100 flex flex-col justify-between hover:bg-orange-50/40 transition">
           <div>
             <div class="flex items-center gap-4 mb-3.5">
@@ -804,7 +790,7 @@
           </div>
         </div>
 
-        <!-- Benefit 3: Accurate Formulas -->
+        <!-- Benefit 3: Accurate Formulas (Title placed directly on the right of logo) -->
         <div class="bg-slate-50/70 p-6 rounded-2xl border border-slate-100 flex flex-col justify-between hover:bg-orange-50/40 transition">
           <div>
             <div class="flex items-center gap-4 mb-3.5">
@@ -819,7 +805,7 @@
           </div>
         </div>
 
-        <!-- Benefit 4: For Everyone -->
+        <!-- Benefit 4: For Everyone (Title placed directly on the right of logo) -->
         <div class="bg-slate-50/70 p-6 rounded-2xl border border-slate-100 flex flex-col justify-between hover:bg-orange-50/40 transition">
           <div>
             <div class="flex items-center gap-4 mb-3.5">
@@ -847,88 +833,68 @@
             <i class="fa-solid fa-compass-drafting"></i>
           </div>
           <p class="text-sm sm:text-base font-semibold text-slate-700">
-            BuildCalcPro &copy; 2026 &bull; Professional construction estimating algorithms &amp; takeoff tools.
+            BuildCalcPro &copy; 2026 &bull; All calculations are estimates based on standard building formulas.
           </p>
         </div>
         <div class="flex gap-6 sm:gap-8 text-sm sm:text-base text-slate-500 font-semibold">
           <a href="#" class="hover:text-orange-600 transition">Privacy Policy</a>
           <a href="#" class="hover:text-orange-600 transition">Terms of Service</a>
-          <a href="#" class="hover:text-orange-600 transition">Contact Engineering</a>
+          <a href="#" class="hover:text-orange-600 transition">Contact</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- ======================== 7. ALL-IN-ONE INTERACTIVE CALCULATOR MODAL ======================== -->
-  <div id="calculator-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-3 sm:p-4 bg-slate-950/75 backdrop-blur-sm transition-opacity">
-    <div class="bg-white rounded-3xl shadow-2xl max-w-2xl w-full overflow-hidden border border-slate-200 max-h-[92vh] flex flex-col">
+  <!-- ======================== 7. INTERACTIVE CALCULATOR MODAL ======================== -->
+  <div id="calculator-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-3 sm:p-4 bg-slate-950/70 backdrop-blur-sm transition-opacity">
+    <div class="bg-white rounded-3xl shadow-2xl max-w-lg w-full overflow-hidden border border-slate-200 max-h-[92vh] flex flex-col">
       
       <!-- Modal Header -->
-      <div class="px-6 py-4.5 bg-slate-900 text-white flex items-center justify-between shrink-0">
+      <div class="px-6 py-5 bg-slate-900 text-white flex items-center justify-between shrink-0">
         <div class="flex items-center gap-3.5">
-          <div id="modal-icon-badge" class="w-11 h-11 rounded-xl bg-slate-800 flex items-center justify-center p-1.5 text-orange-500 text-xl shrink-0">
+          <div id="modal-icon-badge" class="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center p-1 text-orange-500">
           </div>
           <div>
-            <h3 id="modal-title" class="font-bold text-lg sm:text-xl leading-tight text-white">Calculator</h3>
-            <p id="modal-desc" class="text-xs text-slate-300">Fast interactive construction estimation</p>
+            <h3 id="modal-title" class="font-bold text-lg sm:text-xl leading-tight">Calculator</h3>
+            <p class="text-xs text-slate-300">Fast interactive estimation</p>
           </div>
         </div>
-        <button onclick="closeModal()" aria-label="Close modal" class="w-10 h-10 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center transition cursor-pointer">
+        <button onclick="closeModal()" aria-label="Close modal" class="w-9 h-9 rounded-xl bg-slate-800 text-slate-300 hover:text-white flex items-center justify-center transition">
           <i class="fa-solid fa-xmark text-lg"></i>
         </button>
       </div>
 
-      <!-- Modal Body (Dynamic Inputs & Calculation Results) -->
-      <div class="p-6 overflow-y-auto space-y-6">
-        
-        <!-- Form Inputs Grid -->
-        <div id="modal-inputs" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <!-- Dynamically populated per calculator -->
+      <!-- Modal Body -->
+      <div class="p-6 overflow-y-auto">
+        <div id="modal-inputs" class="space-y-4">
+          <!-- Populated by JS -->
         </div>
 
-        <!-- Action Row -->
-        <div class="flex flex-col sm:flex-row gap-3 pt-2">
-          <button onclick="calculateModalResult()" class="flex-1 py-3.5 px-6 bg-orange-600 hover:bg-orange-700 active:bg-orange-800 text-white font-extrabold rounded-xl shadow-md transition duration-150 flex items-center justify-center gap-2.5 cursor-pointer text-base sm:text-lg">
-            <i class="fa-solid fa-calculator"></i>
-            Calculate Results
-          </button>
-          <button id="copy-result-btn" onclick="copyResultsToClipboard()" class="py-3.5 px-5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded-xl transition duration-150 flex items-center justify-center gap-2 cursor-pointer text-sm sm:text-base">
-            <i class="fa-regular fa-copy"></i>
-            <span>Copy Takeoff</span>
-          </button>
-        </div>
+        <button onclick="calculateModalResult()" class="w-full mt-6 py-3.5 bg-orange-600 hover:bg-orange-700 active:bg-orange-800 text-white font-extrabold rounded-xl shadow-md transition duration-150 flex items-center justify-center gap-2.5 cursor-pointer text-base sm:text-lg">
+          <i class="fa-solid fa-calculator"></i>
+          Calculate Results
+        </button>
 
         <!-- Dynamic Results Container -->
-        <div id="calc-result" class="p-5 rounded-2xl bg-orange-50/80 border border-orange-200/90 space-y-3">
-          <div class="flex items-center justify-between border-b border-orange-200 pb-2">
-            <h4 class="text-xs font-black text-orange-950 uppercase tracking-wider flex items-center gap-2">
-              <i class="fa-solid fa-clipboard-check text-orange-600"></i>
-              Estimated Project Requirements
-            </h4>
-            <span id="calc-timestamp" class="text-[11px] font-semibold text-orange-800">Auto-calculated</span>
-          </div>
-          
-          <div id="calc-result-content" class="text-sm sm:text-base text-slate-800 space-y-2">
-            <!-- Dynamically populated output cards & stats -->
+        <div id="calc-result" class="mt-6 p-4 sm:p-5 rounded-2xl bg-orange-50 border border-orange-200">
+          <h4 class="text-xs font-black text-orange-900 uppercase tracking-wider mb-2.5">Estimated Requirements:</h4>
+          <div id="calc-result-content" class="text-sm sm:text-base text-slate-800 space-y-1.5">
           </div>
         </div>
-
       </div>
 
       <!-- Modal Footer -->
       <div class="px-6 py-3.5 bg-slate-50 border-t border-slate-100 flex items-center justify-between text-xs sm:text-sm text-slate-500 shrink-0">
-        <span class="flex items-center gap-1.5"><i class="fa-solid fa-shield-halved text-emerald-600"></i> Real-time construction estimator</span>
-        <button onclick="closeModal()" class="text-slate-800 hover:text-orange-600 font-bold px-3 py-1 cursor-pointer">Close</button>
+        <span>Includes 5-10% standard buffer</span>
+        <button onclick="closeModal()" class="text-slate-800 hover:text-orange-600 font-bold px-3 py-1">Done</button>
       </div>
 
     </div>
   </div>
 
-  <!-- ======================== 8. CLIENT SCRIPTING & ALL 12 ENGINES ======================== -->
+  <!-- ======================== 8. CLIENT SCRIPTING ======================== -->
   <script>
-    /* -------------------------------------------------------------
-       1. Mobile Menu & Search Helpers
-       ------------------------------------------------------------- */
+    // Responsive Mobile Menu Toggle with Icon Animation
     function toggleMobileMenu() {
       const menu = document.getElementById('mobile-menu');
       const icon = document.getElementById('hamburger-icon');
@@ -943,6 +909,7 @@
       }
     }
 
+    // Live search filter across cards
     function handleSearch(query) {
       const q = query.toLowerCase().trim();
       const cards = document.querySelectorAll('.calc-card');
@@ -981,9 +948,9 @@
       }
     }
 
-    /* -------------------------------------------------------------
-       2. Ping-Pong Category Navigation (Smooth back-and-forth)
-       ------------------------------------------------------------- */
+    /* ==========================================================================
+       PING-PONG AUTO-SCROLL (FORWARD -> BACKWARD) WITH ARROWS & USER OVERRIDES
+       ========================================================================== */
     let scrollCategoryRibbon = null;
 
     (function initPingPongCategoryNav() {
@@ -995,8 +962,8 @@
 
       if (!viewport) return;
 
-      const scrollSpeed = 0.85;
-      let direction = 1; // 1 = right, -1 = left
+      const scrollSpeed = 0.85; // Pixels per frame
+      let direction = 1; // 1 = forward (scroll right), -1 = backward (scroll left)
       let isPaused = false;
       let resumeTimeout = null;
       let isDragging = false;
@@ -1005,10 +972,12 @@
       let hasDragged = false;
       let pauseUntilTimestamp = 0;
 
+      // Update indicator arrows and gradient masks based on unseen text/content
       function updateIndicators() {
         const maxScroll = Math.max(0, viewport.scrollWidth - viewport.clientWidth);
         const sl = viewport.scrollLeft;
 
+        // Left boundary check
         if (sl > 6) {
           btnLeft.classList.remove('opacity-0', 'pointer-events-none');
           btnLeft.classList.add('opacity-100');
@@ -1021,6 +990,7 @@
           gradLeft.classList.remove('opacity-100');
         }
 
+        // Right boundary check
         if (sl < maxScroll - 6) {
           btnRight.classList.remove('opacity-0', 'pointer-events-none');
           btnRight.classList.add('opacity-100');
@@ -1038,12 +1008,15 @@
         isPaused = true;
         clearTimeout(resumeTimeout);
         resumeTimeout = setTimeout(() => {
-          if (!isDragging) isPaused = false;
+          if (!isDragging) {
+            isPaused = false;
+          }
         }, duration);
       }
 
+      // Step button click scrolling (left / right)
       scrollCategoryRibbon = function(dir) {
-        pauseScroll(2500);
+        pauseScroll(2400);
         const stepAmount = 260;
         viewport.scrollBy({
           left: dir * stepAmount,
@@ -1052,6 +1025,7 @@
         setTimeout(updateIndicators, 220);
       };
 
+      // Main ping-pong animation loop
       function pingPongStep(timestamp) {
         const maxScroll = Math.max(0, viewport.scrollWidth - viewport.clientWidth);
 
@@ -1060,15 +1034,15 @@
             viewport.scrollLeft += scrollSpeed;
             if (viewport.scrollLeft >= maxScroll - 1) {
               viewport.scrollLeft = maxScroll;
-              direction = -1;
-              pauseUntilTimestamp = timestamp + 1600;
+              direction = -1; // Turn around to scroll backward
+              pauseUntilTimestamp = timestamp + 1600; // Pause 1.6s at the end
             }
           } else {
             viewport.scrollLeft -= scrollSpeed;
             if (viewport.scrollLeft <= 1) {
               viewport.scrollLeft = 0;
-              direction = 1;
-              pauseUntilTimestamp = timestamp + 1600;
+              direction = 1; // Turn around to scroll forward
+              pauseUntilTimestamp = timestamp + 1600; // Pause 1.6s at the start
             }
           }
           updateIndicators();
@@ -1078,7 +1052,7 @@
       }
       requestAnimationFrame(pingPongStep);
 
-      // Drag and touch handlers
+      // Desktop Mouse Drag Support
       viewport.addEventListener('mousedown', (e) => {
         isDragging = true;
         isPaused = true;
@@ -1092,7 +1066,9 @@
         if (!isDragging) return;
         const x = e.pageX - viewport.offsetLeft;
         const walk = (x - startX) * 1.4;
-        if (Math.abs(walk) > 4) hasDragged = true;
+        if (Math.abs(walk) > 4) {
+          hasDragged = true;
+        }
         viewport.scrollLeft = startScrollLeft - walk;
         updateIndicators();
       });
@@ -1105,6 +1081,7 @@
         }
       });
 
+      // Prevent accidental link activation right after a drag action
       viewport.addEventListener('click', (e) => {
         if (hasDragged) {
           e.preventDefault();
@@ -1113,6 +1090,7 @@
         }
       }, true);
 
+      // Mobile Touch Support
       viewport.addEventListener('touchstart', () => {
         isPaused = true;
         clearTimeout(resumeTimeout);
@@ -1128,948 +1106,318 @@
         setTimeout(updateIndicators, 120);
       }, { passive: true });
 
+      // Wheel / Trackpad horizontal swipe
       viewport.addEventListener('wheel', () => {
         pauseScroll(2000);
         setTimeout(updateIndicators, 60);
       }, { passive: true });
 
-      viewport.addEventListener('mouseenter', () => { isPaused = true; });
-      viewport.addEventListener('mouseleave', () => { if (!isDragging) pauseScroll(800); });
+      // Hover pause
+      viewport.addEventListener('mouseenter', () => {
+        isPaused = true;
+      });
+
+      viewport.addEventListener('mouseleave', () => {
+        if (!isDragging) {
+          pauseScroll(800);
+        }
+      });
+
       viewport.addEventListener('scroll', updateIndicators, { passive: true });
       window.addEventListener('resize', updateIndicators);
 
+      // Initial check
       setTimeout(updateIndicators, 100);
     })();
 
-    /* -------------------------------------------------------------
-       3. THE 12 DEDICATED CALCULATION ENGINES & FORMULAS
-       ------------------------------------------------------------- */
-    const calculatorEngines = {
-      // 1. Concrete Calculator
+    // Modal data dictionary and formulas
+    const calculatorConfigs = {
       concrete: {
-        title: "Concrete Slab & Footing Calculator",
-        desc: "Calculate concrete volume, pre-mix bags, and estimated ready-mix costs.",
-        icon: '<i class="fa-solid fa-truck-monster text-orange-500"></i>',
+        title: "Concrete Slab Calculator",
+        icon: '<i class="fa-solid fa-truck-monster text-lg"></i>',
         inputs: [
-          { id: 'c_length', label: 'Length (ft)', type: 'number', step: '0.1', default: '24' },
-          { id: 'c_width', label: 'Width (ft)', type: 'number', step: '0.1', default: '12' },
-          { id: 'c_thickness', label: 'Thickness / Depth (inches)', type: 'number', step: '0.25', default: '4' },
-          { id: 'c_waste', label: 'Waste Buffer (%)', type: 'select', default: '10', options: [
-            { label: 'None (0%)', value: '0' },
-            { label: '5% (Paved formwork)', value: '5' },
-            { label: '10% (Standard slab)', value: '10' },
-            { label: '15% (Rough ground/uneven)', value: '15' }
-          ]},
-          { id: 'c_cost', label: 'Ready-mix Cost per Cu. Yd ($)', type: 'number', step: '1', default: '150', spanFull: true }
+          { id: 'c_length', label: 'Length (ft)', type: 'number', default: '20' },
+          { id: 'c_width', label: 'Width (ft)', type: 'number', default: '10' },
+          { id: 'c_thickness', label: 'Thickness (inches)', type: 'number', default: '4' },
+          { id: 'c_cost', label: 'Est. Price per Cubic Yard ($)', type: 'number', default: '145' }
         ],
-        calc: (v) => {
-          const rawCuFt = v.c_length * v.c_width * (v.c_thickness / 12);
-          const wasteFactor = 1 + (v.c_waste / 100);
-          const totalCuFt = rawCuFt * wasteFactor;
-          const totalCuYards = totalCuFt / 27;
-          
-          // Pre-mix bag yields: 60lb yields 0.45 cu ft, 80lb yields 0.60 cu ft
-          const bags60 = Math.ceil(totalCuFt / 0.45);
-          const bags80 = Math.ceil(totalCuFt / 0.60);
-          const readyMixCost = totalCuYards * v.c_cost;
-
+        calc: (vals) => {
+          const cuFt = vals.c_length * vals.c_width * (vals.c_thickness / 12);
+          const cuYards = cuFt / 27;
+          const bags60 = cuYards * 60;
+          const bags80 = cuYards * 45;
+          const cost = cuYards * vals.c_cost;
           return `
-            <div class="grid grid-cols-2 gap-3 mb-2">
-              <div class="bg-white p-3 rounded-xl border border-orange-200">
-                <span class="text-xs text-slate-500 font-bold uppercase block">Total Volume</span>
-                <span class="text-xl font-black text-orange-600">${totalCuYards.toFixed(2)} yd³</span>
-                <span class="text-xs text-slate-400 block">${totalCuFt.toFixed(1)} cu ft</span>
-              </div>
-              <div class="bg-white p-3 rounded-xl border border-orange-200">
-                <span class="text-xs text-slate-500 font-bold uppercase block">Est. Ready-Mix Cost</span>
-                <span class="text-xl font-black text-slate-900">$${readyMixCost.toFixed(2)}</span>
-                <span class="text-xs text-slate-400 block">@ $${v.c_cost}/yd³</span>
-              </div>
-            </div>
-            <div class="space-y-1.5 text-xs sm:text-sm">
-              <div class="flex justify-between py-1 border-b border-orange-100">
-                <span class="text-slate-600">60-lb Pre-Mix Bags:</span>
-                <span class="font-bold text-slate-900">${bags60} bags (~$${(bags60 * 5.25).toFixed(0)})</span>
-              </div>
-              <div class="flex justify-between py-1 border-b border-orange-100">
-                <span class="text-slate-600">80-lb Pre-Mix Bags:</span>
-                <span class="font-bold text-slate-900">${bags80} bags (~$${(bags80 * 6.95).toFixed(0)})</span>
-              </div>
-              <div class="flex justify-between py-1 text-slate-600">
-                <span>Waste Margin Applied:</span>
-                <span class="font-semibold text-slate-800">+${v.c_waste}% (${((totalCuYards - (rawCuFt/27))).toFixed(2)} yd³)</span>
-              </div>
-            </div>
+            <div class="flex justify-between py-1.5 border-b border-orange-200"><span>Volume Needed:</span> <strong>${cuYards.toFixed(2)} cu. yards (${cuFt.toFixed(1)} cu ft)</strong></div>
+            <div class="flex justify-between py-1.5 border-b border-orange-200"><span>60-lb Pre-mix Bags:</span> <strong>${Math.ceil(bags60)} bags</strong></div>
+            <div class="flex justify-between py-1.5 border-b border-orange-200"><span>80-lb Pre-mix Bags:</span> <strong>${Math.ceil(bags80)} bags</strong></div>
+            <div class="flex justify-between py-1.5 font-bold text-orange-700"><span>Estimated Cost:</span> <strong>$${cost.toFixed(2)}</strong></div>
           `;
         }
       },
-
-      // 2. Cement Calculator
       cement: {
-        title: "Cement, Sand & Aggregate Batch Calculator",
-        desc: "Estimate bags of pure cement and raw aggregate components by batch volumetric mix ratio.",
-        icon: '<i class="fa-solid fa-bag-shopping text-amber-500"></i>',
+        title: "Cement & Mortar Calculator",
+        icon: '<i class="fa-solid fa-bag-shopping text-lg"></i>',
         inputs: [
-          { id: 'cm_area', label: 'Area (sq ft)', type: 'number', step: '1', default: '160' },
-          { id: 'cm_depth', label: 'Pour Depth (inches)', type: 'number', step: '0.25', default: '4' },
-          { id: 'cm_ratio', label: 'Mix Ratio (Cement : Sand : Gravel)', type: 'select', default: '1:2:4', options: [
-            { label: '1 : 2 : 4 (Standard 3,000 PSI)', value: '1:2:4' },
-            { label: '1 : 3 : 5 (Foundations & Footings)', value: '1:3:5' },
-            { label: '1 : 1.5 : 3 (High Strength 4,000 PSI)', value: '1:1.5:3' },
-            { label: '1 : 3 Mortar (No coarse gravel)', value: '1:3:0' }
-          ]},
-          { id: 'cm_bag_wt', label: 'Cement Bag Specification', type: 'select', default: '94', options: [
-            { label: '94 lbs (Standard US / 1 cu ft)', value: '94' },
-            { label: '50 kg (Standard Metric / 110 lbs)', value: '110' },
-            { label: '50 lbs (Half-size bag)', value: '50' }
-          ]}
+          { id: 'area', label: 'Surface Area (sq ft)', type: 'number', default: '150' },
+          { id: 'thickness', label: 'Layer Thickness (inches)', type: 'number', default: '2' },
+          { id: 'bag_price', label: 'Bag Price ($)', type: 'number', default: '18' }
         ],
-        calc: (v) => {
-          const wetCuFt = v.cm_area * (v.cm_depth / 12);
-          // Dry volume factor for shrinkage is ~1.54
-          const dryCuFt = wetCuFt * 1.54;
-          
-          let parts = [1, 2, 4];
-          if (v.cm_ratio === '1:3:5') parts = [1, 3, 5];
-          if (v.cm_ratio === '1:1.5:3') parts = [1, 1.5, 3];
-          if (v.cm_ratio === '1:3:0') parts = [1, 3, 0];
-
-          const totalParts = parts[0] + parts[1] + parts[2];
-          const cementCuFt = dryCuFt * (parts[0] / totalParts);
-          const sandCuFt = dryCuFt * (parts[1] / totalParts);
-          const gravelCuFt = dryCuFt * (parts[2] / totalParts);
-
-          // 1 bag of 94lb portland cement is ~1 cu ft (94 lbs)
-          const bagSizeLbs = parseFloat(v.cm_bag_wt);
-          const bagsCement = Math.ceil((cementCuFt * 94) / bagSizeLbs);
-          const sandTons = (sandCuFt * 100) / 2000; // ~100 lbs per cu ft dry sand
-          const gravelTons = (gravelCuFt * 105) / 2000;
-
+        calc: (vals) => {
+          const cuFt = vals.area * (vals.thickness / 12);
+          const bags = Math.ceil(cuFt * 0.75);
+          const sandTons = (cuFt * 0.045).toFixed(2);
           return `
-            <div class="grid grid-cols-3 gap-2 mb-2 text-center">
-              <div class="bg-white p-2.5 rounded-xl border border-orange-200">
-                <span class="text-[10px] text-slate-500 font-bold uppercase block">Cement Bags</span>
-                <span class="text-lg font-black text-orange-600">${bagsCement}</span>
-                <span class="text-[11px] text-slate-400 block">${v.cm_bag_wt} lbs/ea</span>
-              </div>
-              <div class="bg-white p-2.5 rounded-xl border border-orange-200">
-                <span class="text-[10px] text-slate-500 font-bold uppercase block">Sand Needed</span>
-                <span class="text-lg font-black text-slate-900">${sandTons.toFixed(2)}</span>
-                <span class="text-[11px] text-slate-400 block">Tons (${(sandCuFt/27).toFixed(2)} yd³)</span>
-              </div>
-              <div class="bg-white p-2.5 rounded-xl border border-orange-200">
-                <span class="text-[10px] text-slate-500 font-bold uppercase block">Gravel Needed</span>
-                <span class="text-lg font-black text-slate-900">${gravelTons.toFixed(2)}</span>
-                <span class="text-[11px] text-slate-400 block">Tons (${(gravelCuFt/27).toFixed(2)} yd³)</span>
-              </div>
-            </div>
-            <div class="space-y-1 text-xs sm:text-sm pt-1">
-              <div class="flex justify-between py-1 border-b border-orange-100">
-                <span>Wet Poured Volume:</span>
-                <strong>${(wetCuFt/27).toFixed(2)} cu. yards (${wetCuFt.toFixed(1)} cu ft)</strong>
-              </div>
-              <div class="flex justify-between py-1 border-b border-orange-100">
-                <span>Water Recommendation:</span>
-                <strong>~${Math.round(bagsCement * 5.5)} Gallons (~5.5 gal/bag)</strong>
-              </div>
-            </div>
+            <div class="flex justify-between py-1.5 border-b border-orange-200"><span>Portland Bags (94 lb):</span> <strong>${bags} bags</strong></div>
+            <div class="flex justify-between py-1.5 border-b border-orange-200"><span>Sand Required:</span> <strong>${sandTons} tons</strong></div>
+            <div class="flex justify-between py-1.5 font-bold text-orange-700"><span>Est. Cement Cost:</span> <strong>$${(bags * vals.bag_price).toFixed(2)}</strong></div>
           `;
         }
       },
-
-      // 3. Sand Calculator
       sand: {
-        title: "Sand Quantity & Density Estimator",
-        desc: "Calculates volume, bulk tonnage, and material pricing based on soil compaction densities.",
-        icon: '<i class="fa-solid fa-mountain text-yellow-500"></i>',
+        title: "Sand Quantity & Cost",
+        icon: '<i class="fa-solid fa-mountain text-lg"></i>',
         inputs: [
-          { id: 's_len', label: 'Length (ft)', type: 'number', step: '0.1', default: '20' },
-          { id: 's_wid', label: 'Width (ft)', type: 'number', step: '0.1', default: '10' },
-          { id: 's_dep', label: 'Depth (inches)', type: 'number', step: '0.5', default: '3' },
-          { id: 's_type', label: 'Sand Classification', type: 'select', default: '1.35', options: [
-            { label: 'Dry Loose Sand (1.35 tons/yd³)', value: '1.35' },
-            { label: 'Compacted/Damp Sand (1.45 tons/yd³)', value: '1.45' },
-            { label: 'Masonry Fine Sand (1.30 tons/yd³)', value: '1.30' }
-          ]},
-          { id: 's_cost', label: 'Price per Ton ($)', type: 'number', step: '1', default: '42', spanFull: true }
+          { id: 's_len', label: 'Length (ft)', type: 'number', default: '12' },
+          { id: 's_wid', label: 'Width (ft)', type: 'number', default: '10' },
+          { id: 's_dep', label: 'Depth (inches)', type: 'number', default: '3' },
+          { id: 's_cost', label: 'Price per Ton ($)', type: 'number', default: '45' }
         ],
-        calc: (v) => {
-          const cuFt = v.s_len * v.s_wid * (v.s_dep / 12);
-          const cuYards = cuFt / 27;
-          const tons = cuYards * parseFloat(v.s_type);
-          const cost = tons * v.s_cost;
-
+        calc: (vals) => {
+          const cuYards = (vals.s_len * vals.s_wid * (vals.s_dep / 12)) / 27;
+          const tons = cuYards * 1.35;
           return `
-            <div class="grid grid-cols-2 gap-3 mb-2">
-              <div class="bg-white p-3 rounded-xl border border-orange-200">
-                <span class="text-xs text-slate-500 font-bold uppercase block">Weight in Tons</span>
-                <span class="text-xl font-black text-amber-600">${tons.toFixed(2)} Tons</span>
-                <span class="text-xs text-slate-400 block">${Math.round(tons * 2000)} lbs</span>
-              </div>
-              <div class="bg-white p-3 rounded-xl border border-orange-200">
-                <span class="text-xs text-slate-500 font-bold uppercase block">Material Cost</span>
-                <span class="text-xl font-black text-slate-900">$${cost.toFixed(2)}</span>
-                <span class="text-xs text-slate-400 block">@ $${v.s_cost}/ton</span>
-              </div>
-            </div>
-            <div class="space-y-1 text-xs sm:text-sm">
-              <div class="flex justify-between py-1 border-b border-orange-100">
-                <span>Volume in Cubic Yards:</span>
-                <strong>${cuYards.toFixed(2)} yd³ (${cuFt.toFixed(1)} cu ft)</strong>
-              </div>
-              <div class="flex justify-between py-1 text-slate-600">
-                <span>Equivalent 50-lb Sand Bags:</span>
-                <strong>${Math.ceil((tons * 2000) / 50)} bags</strong>
-              </div>
-            </div>
+            <div class="flex justify-between py-1.5 border-b border-orange-200"><span>Volume:</span> <strong>${cuYards.toFixed(2)} cu. yards</strong></div>
+            <div class="flex justify-between py-1.5 border-b border-orange-200"><span>Weight (Tons):</span> <strong>${tons.toFixed(2)} tons</strong></div>
+            <div class="flex justify-between py-1.5 font-bold text-orange-700"><span>Est. Material Cost:</span> <strong>$${(tons * vals.s_cost).toFixed(2)}</strong></div>
           `;
         }
       },
-
-      // 4. Gravel Calculator
       gravel: {
-        title: "Gravel & Crushed Aggregate Calculator",
-        desc: "Estimate gravel requirements for driveways, French drains, and foundation bases.",
-        icon: '<i class="fa-solid fa-cubes-stacked text-slate-600"></i>',
+        title: "Gravel & Aggregate Calculator",
+        icon: '<i class="fa-solid fa-cubes-stacked text-lg"></i>',
         inputs: [
-          { id: 'g_len', label: 'Driveway / Pad Length (ft)', type: 'number', step: '0.5', default: '35' },
-          { id: 'g_wid', label: 'Width (ft)', type: 'number', step: '0.5', default: '12' },
-          { id: 'g_dep', label: 'Depth (inches)', type: 'number', step: '0.5', default: '4' },
-          { id: 'g_type', label: 'Gravel & Stone Grade', type: 'select', default: '1.40', options: [
-            { label: 'Crushed Stone #57 (1.40 tons/yd³)', value: '1.40' },
-            { label: 'Pea Gravel / River Rock (1.45 tons/yd³)', value: '1.45' },
-            { label: 'Crusher Run / Road Base (1.50 tons/yd³)', value: '1.50' },
-            { label: 'Decomposed Granite (1.35 tons/yd³)', value: '1.35' }
-          ]},
-          { id: 'g_cost', label: 'Price per Ton ($)', type: 'number', step: '1', default: '54', spanFull: true }
+          { id: 'g_len', label: 'Driveway Length (ft)', type: 'number', default: '30' },
+          { id: 'g_wid', label: 'Width (ft)', type: 'number', default: '10' },
+          { id: 'g_dep', label: 'Gravel Depth (inches)', type: 'number', default: '4' },
+          { id: 'g_cost', label: 'Price per Ton ($)', type: 'number', default: '55' }
         ],
-        calc: (v) => {
-          const cuFt = v.g_len * v.g_wid * (v.g_dep / 12);
-          const cuYards = cuFt / 27;
-          const tons = cuYards * parseFloat(v.g_type);
-          const cost = tons * v.g_cost;
-
+        calc: (vals) => {
+          const cuYards = (vals.g_len * vals.g_wid * (vals.g_dep / 12)) / 27;
+          const tons = cuYards * 1.4;
           return `
-            <div class="grid grid-cols-2 gap-3 mb-2">
-              <div class="bg-white p-3 rounded-xl border border-orange-200">
-                <span class="text-xs text-slate-500 font-bold uppercase block">Total Gravel Weight</span>
-                <span class="text-xl font-black text-slate-800">${tons.toFixed(2)} Tons</span>
-                <span class="text-xs text-slate-400 block">${Math.round(tons * 2000)} lbs</span>
-              </div>
-              <div class="bg-white p-3 rounded-xl border border-orange-200">
-                <span class="text-xs text-slate-500 font-bold uppercase block">Total Estimated Cost</span>
-                <span class="text-xl font-black text-orange-600">$${cost.toFixed(2)}</span>
-                <span class="text-xs text-slate-400 block">@ $${v.g_cost}/ton</span>
-              </div>
-            </div>
-            <div class="space-y-1 text-xs sm:text-sm">
-              <div class="flex justify-between py-1 border-b border-orange-100">
-                <span>Volume:</span>
-                <strong>${cuYards.toFixed(2)} yd³ (${cuFt.toFixed(1)} cu. ft.)</strong>
-              </div>
-              <div class="flex justify-between py-1 text-slate-600">
-                <span>Typical Tri-axle Dump Truck Loads:</span>
-                <strong>${(tons / 15).toFixed(1)} loads (15 tons/truck)</strong>
-              </div>
-            </div>
+            <div class="flex justify-between py-1.5 border-b border-orange-200"><span>Gravel Volume:</span> <strong>${cuYards.toFixed(2)} cu. yards</strong></div>
+            <div class="flex justify-between py-1.5 border-b border-orange-200"><span>Estimated Weight:</span> <strong>${tons.toFixed(2)} tons</strong></div>
+            <div class="flex justify-between py-1.5 font-bold text-orange-700"><span>Estimated Cost:</span> <strong>$${(tons * vals.g_cost).toFixed(2)}</strong></div>
           `;
         }
       },
-
-      // 5. Brick Calculator
       brick: {
-        title: "Brick & Mortar Wall Calculator",
-        desc: "Computes single or double wythe masonry brick counts with mortar joint factors.",
-        icon: '<i class="fa-solid fa-shapes text-red-500"></i>',
+        title: "Brick Calculator",
+        icon: '<i class="fa-solid fa-shapes text-lg"></i>',
         inputs: [
-          { id: 'b_len', label: 'Wall Length (ft)', type: 'number', step: '0.5', default: '28' },
-          { id: 'b_hgt', label: 'Wall Height (ft)', type: 'number', step: '0.5', default: '6' },
-          { id: 'b_type', label: 'Brick Standard Format', type: 'select', default: 'standard', options: [
-            { label: 'Modular Standard (3.625 x 2.25 x 7.625")', value: 'standard' },
-            { label: 'King Size (3 x 2.625 x 9.625")', value: 'king' },
-            { label: 'Queen Size (3 x 2.75 x 7.625")', value: 'queen' }
-          ]},
-          { id: 'b_wythe', label: 'Wall Courses (Wythe)', type: 'select', default: '1', options: [
-            { label: 'Single Wythe (1 brick thick)', value: '1' },
-            { label: 'Double Wythe (2 bricks thick)', value: '2' }
-          ]},
-          { id: 'b_waste', label: 'Waste Allowance (%)', type: 'select', default: '10', options: [
-            { label: '5% (Straight unbroken wall)', value: '5' },
-            { label: '10% (Standard waste & cuts)', value: '10' },
-            { label: '15% (Many openings & corners)', value: '15' }
-          ]},
-          { id: 'b_price', label: 'Price per Brick ($)', type: 'number', step: '0.05', default: '0.85' }
+          { id: 'b_length', label: 'Wall Length (ft)', type: 'number', default: '25' },
+          { id: 'b_height', label: 'Wall Height (ft)', type: 'number', default: '6' },
+          { id: 'b_price', label: 'Cost per Brick ($)', type: 'number', default: '0.85' }
         ],
-        calc: (v) => {
-          const area = v.b_len * v.b_hgt;
-          // Bricks per sq ft with standard 3/8" joint
-          let bricksPerSqFt = 6.85; // Modular
-          if (v.b_type === 'king') bricksPerSqFt = 4.75;
-          if (v.b_type === 'queen') bricksPerSqFt = 5.75;
-
-          const totalWytheMultiplier = parseFloat(v.b_wythe);
-          const rawBricks = area * bricksPerSqFt * totalWytheMultiplier;
-          const wasteFactor = 1 + (v.b_waste / 100);
-          const totalBricks = Math.ceil(rawBricks * wasteFactor);
-          const totalCost = totalBricks * v.b_price;
-          // ~70lb bag of masonry cement lays ~130 modular bricks
-          const mortarBags = Math.ceil(totalBricks / 130);
-
+        calc: (vals) => {
+          const wallArea = vals.b_length * vals.b_height;
+          const standardBricks = Math.ceil(wallArea * 6.8 * 1.05);
           return `
-            <div class="grid grid-cols-2 gap-3 mb-2">
-              <div class="bg-white p-3 rounded-xl border border-orange-200">
-                <span class="text-xs text-slate-500 font-bold uppercase block">Total Bricks Required</span>
-                <span class="text-xl font-black text-red-600">${totalBricks.toLocaleString()} Bricks</span>
-                <span class="text-xs text-slate-400 block">${Math.ceil(totalBricks/500)} full pallet(s)</span>
-              </div>
-              <div class="bg-white p-3 rounded-xl border border-orange-200">
-                <span class="text-xs text-slate-500 font-bold uppercase block">Estimated Brick Cost</span>
-                <span class="text-xl font-black text-slate-900">$${totalCost.toFixed(2)}</span>
-                <span class="text-xs text-slate-400 block">@ $${v.b_price}/brick</span>
-              </div>
-            </div>
-            <div class="space-y-1 text-xs sm:text-sm">
-              <div class="flex justify-between py-1 border-b border-orange-100">
-                <span>Net Wall Surface Area:</span>
-                <strong>${area.toFixed(1)} sq. ft.</strong>
-              </div>
-              <div class="flex justify-between py-1 border-b border-orange-100">
-                <span>Mortar Needed (70lb Type N/S):</span>
-                <strong>${mortarBags} Bags (~${(mortarBags * 0.4).toFixed(1)} tons of sand)</strong>
-              </div>
-              <div class="flex justify-between py-1 text-slate-600">
-                <span>Waste Margin Included:</span>
-                <strong>+${v.b_waste}% (${Math.round(totalBricks - rawBricks)} bricks)</strong>
-              </div>
-            </div>
+            <div class="flex justify-between py-1.5 border-b border-orange-200"><span>Wall Area:</span> <strong>${wallArea} sq ft</strong></div>
+            <div class="flex justify-between py-1.5 border-b border-orange-200"><span>Bricks (with 5% waste):</span> <strong>${standardBricks} bricks</strong></div>
+            <div class="flex justify-between py-1.5 font-bold text-orange-700"><span>Estimated Cost:</span> <strong>$${(standardBricks * vals.b_price).toFixed(2)}</strong></div>
           `;
         }
       },
-
-      // 6. Block Calculator (CMU)
       block: {
-        title: "Concrete Block (CMU) & Grout Calculator",
-        desc: "Estimate concrete masonry units, core grout fill volumes, and mortar requirements.",
-        icon: '<i class="fa-solid fa-cube text-slate-700"></i>',
+        title: "Block Calculator (CMU)",
+        icon: '<i class="fa-solid fa-cube text-lg"></i>',
         inputs: [
-          { id: 'bl_len', label: 'Wall Length (ft)', type: 'number', step: '0.5', default: '40' },
-          { id: 'bl_hgt', label: 'Wall Height (ft)', type: 'number', step: '0.5', default: '8' },
-          { id: 'bl_size', label: 'Block Dimensions', type: 'select', default: '8x8x16', options: [
-            { label: '8" x 8" x 16" Standard CMU', value: '8x8x16' },
-            { label: '6" x 8" x 16" Partition CMU', value: '6x8x16' },
-            { label: '4" x 8" x 16" Solid/Hollow', value: '4x8x16' },
-            { label: '12" x 8" x 16" Heavy Retaining', value: '12x8x16' }
-          ]},
-          { id: 'bl_core', label: 'Core Grout Filling', type: 'select', default: '32', options: [
-            { label: 'None (Unfilled cores)', value: '0' },
-            { label: 'Solid Grouted (100% cores)', value: '100' },
-            { label: 'Reinforced Every 16" OC', value: '16' },
-            { label: 'Reinforced Every 32" OC', value: '32' },
-            { label: 'Reinforced Every 48" OC', value: '48' }
-          ]},
-          { id: 'bl_waste', label: 'Block Waste Allowance (%)', type: 'select', default: '7', options: [
-            { label: '5% (Standard rectangular)', value: '5' },
-            { label: '7% (Recommended)', value: '7' },
-            { label: '10% (Frequent cuts/openings)', value: '10' }
-          ]},
-          { id: 'bl_cost', label: 'Cost per Block ($)', type: 'number', step: '0.1', default: '2.45' }
+          { id: 'bl_len', label: 'Wall Length (ft)', type: 'number', default: '40' },
+          { id: 'bl_hgt', label: 'Wall Height (ft)', type: 'number', default: '8' },
+          { id: 'bl_cost', label: 'Price per Block ($)', type: 'number', default: '2.40' }
         ],
-        calc: (v) => {
-          const area = v.bl_len * v.bl_hgt;
-          // 8x8x16 block face is 128 sq inches = 0.888 sq ft = 1.125 blocks per sq ft
-          const rawBlocks = area * 1.125;
-          const wasteFactor = 1 + (v.bl_waste / 100);
-          const totalBlocks = Math.ceil(rawBlocks * wasteFactor);
-          const totalCost = totalBlocks * v.bl_cost;
-
-          // Grout estimation (an 8x8x16 core is ~0.15 cu ft per cell, 2 cells per block = 0.30 cu ft)
-          let groutMultiplier = 0;
-          if (v.bl_core === '100') groutMultiplier = 1.0;
-          if (v.bl_core === '16') groutMultiplier = 0.5; // Every other cell
-          if (v.bl_core === '32') groutMultiplier = 0.25;
-          if (v.bl_core === '48') groutMultiplier = 0.17;
-
-          const groutCuYards = (totalBlocks * 0.30 * groutMultiplier) / 27;
-          const mortarBags = Math.ceil(totalBlocks / 33); // 1 bag of mortar lays ~33 CMU blocks
-
+        calc: (vals) => {
+          const sqft = vals.bl_len * vals.bl_hgt;
+          const blocks = Math.ceil(sqft * 1.125 * 1.05);
           return `
-            <div class="grid grid-cols-2 gap-3 mb-2">
-              <div class="bg-white p-3 rounded-xl border border-orange-200">
-                <span class="text-xs text-slate-500 font-bold uppercase block">Total CMU Blocks</span>
-                <span class="text-xl font-black text-slate-900">${totalBlocks} Blocks</span>
-                <span class="text-xs text-slate-400 block">${Math.ceil(totalBlocks / 90)} pallet(s)</span>
-              </div>
-              <div class="bg-white p-3 rounded-xl border border-orange-200">
-                <span class="text-xs text-slate-500 font-bold uppercase block">Core Fill Grout</span>
-                <span class="text-xl font-black text-orange-600">${groutCuYards > 0 ? groutCuYards.toFixed(2) + ' yd³' : 'None'}</span>
-                <span class="text-xs text-slate-400 block">${v.bl_core === '0' ? 'Hollow cores' : 'Grouted cells'}</span>
-              </div>
-            </div>
-            <div class="space-y-1 text-xs sm:text-sm">
-              <div class="flex justify-between py-1 border-b border-orange-100">
-                <span>Wall Face Area:</span>
-                <strong>${area.toFixed(1)} sq ft</strong>
-              </div>
-              <div class="flex justify-between py-1 border-b border-orange-100">
-                <span>Mortar Bags (70lb Type S/M):</span>
-                <strong>${mortarBags} bags</strong>
-              </div>
-              <div class="flex justify-between py-1 text-slate-600">
-                <span>Estimated Blocks Cost:</span>
-                <strong class="text-slate-900">$${totalCost.toFixed(2)}</strong>
-              </div>
-            </div>
+            <div class="flex justify-between py-1.5 border-b border-orange-200"><span>Wall Surface:</span> <strong>${sqft} sq ft</strong></div>
+            <div class="flex justify-between py-1.5 border-b border-orange-200"><span>8x8x16 CMU Blocks:</span> <strong>${blocks} blocks</strong></div>
+            <div class="flex justify-between py-1.5 font-bold text-orange-700"><span>Estimated Cost:</span> <strong>$${(blocks * vals.bl_cost).toFixed(2)}</strong></div>
           `;
         }
       },
-
-      // 7. Paint Calculator
       paint: {
-        title: "Interior & Exterior Paint Coverage Calculator",
-        desc: "Calculates net paintable wall surface by subtracting windows, doors, and applying multiple coats.",
-        icon: '<i class="fa-solid fa-paint-roller text-sky-500"></i>',
+        title: "Paint Coverage Calculator",
+        icon: '<i class="fa-solid fa-paint-roller text-lg"></i>',
         inputs: [
-          { id: 'p_len', label: 'Room Length (ft)', type: 'number', step: '0.5', default: '16' },
-          { id: 'p_wid', label: 'Room Width (ft)', type: 'number', step: '0.5', default: '14' },
-          { id: 'p_hgt', label: 'Ceiling Height (ft)', type: 'number', step: '0.5', default: '9' },
-          { id: 'p_coats', label: 'Number of Coats', type: 'select', default: '2', options: [
-            { label: '1 Coat (Touch-up / pre-primed)', value: '1' },
-            { label: '2 Coats (Recommended full coverage)', value: '2' },
-            { label: '3 Coats (Dark-to-light transformation)', value: '3' }
-          ]},
-          { id: 'p_doors', label: 'Door Openings (qty)', type: 'number', step: '1', default: '2' },
-          { id: 'p_windows', label: 'Window Openings (qty)', type: 'number', step: '1', default: '3' },
-          { id: 'p_coverage', label: 'Spreading Rate (sq ft/gallon)', type: 'number', step: '25', default: '350', spanFull: true }
+          { id: 'p_length', label: 'Perimeter / Wall Length (ft)', type: 'number', default: '45' },
+          { id: 'p_height', label: 'Wall Height (ft)', type: 'number', default: '9' },
+          { id: 'p_coats', label: 'Number of Coats', type: 'number', default: '2' },
+          { id: 'p_gal_cost', label: 'Price per Gallon ($)', type: 'number', default: '48' }
         ],
-        calc: (v) => {
-          const perimeter = 2 * (v.p_len + v.p_wid);
-          const grossWallArea = perimeter * v.p_hgt;
-          // Standard deduction: Door = ~21 sq ft, Window = ~15 sq ft
-          const deductions = (v.p_doors * 21) + (v.p_windows * 15);
-          const netWallArea = Math.max(0, grossWallArea - deductions);
-          const coats = parseInt(v.p_coats);
-          const totalSqFtToCover = netWallArea * coats;
-          const gallonsNeeded = Math.ceil(totalSqFtToCover / v.p_coverage);
-          const ceilingArea = v.p_len * v.p_wid;
-
+        calc: (vals) => {
+          const sqft = vals.p_length * vals.p_height * vals.p_coats;
+          const gallons = Math.ceil(sqft / 350);
           return `
-            <div class="grid grid-cols-2 gap-3 mb-2">
-              <div class="bg-white p-3 rounded-xl border border-orange-200">
-                <span class="text-xs text-slate-500 font-bold uppercase block">Gallons Needed</span>
-                <span class="text-xl font-black text-sky-600">${gallonsNeeded} Gallon(s)</span>
-                <span class="text-xs text-slate-400 block">${coats} Coat(s) @ ${v.p_coverage} sq ft/gal</span>
-              </div>
-              <div class="bg-white p-3 rounded-xl border border-orange-200">
-                <span class="text-xs text-slate-500 font-bold uppercase block">Net Wall Surface</span>
-                <span class="text-xl font-black text-slate-900">${Math.round(netWallArea)} sq ft</span>
-                <span class="text-xs text-slate-400 block">Gross: ${Math.round(grossWallArea)} sq ft</span>
-              </div>
-            </div>
-            <div class="space-y-1 text-xs sm:text-sm">
-              <div class="flex justify-between py-1 border-b border-orange-100">
-                <span>Trim Paint (Baseboards & Doors):</span>
-                <strong>~${Math.ceil(perimeter / 120)} Quart(s)</strong>
-              </div>
-              <div class="flex justify-between py-1 border-b border-orange-100">
-                <span>Ceiling Paint (If painted separately):</span>
-                <strong>~${Math.ceil(ceilingArea / 350)} Gallon(s) (${Math.round(ceilingArea)} sq ft)</strong>
-              </div>
-              <div class="flex justify-between py-1 text-slate-600">
-                <span>Deductions Applied:</span>
-                <strong>-${deductions} sq ft (${v.p_doors} doors, ${v.p_windows} windows)</strong>
-              </div>
-            </div>
+            <div class="flex justify-between py-1.5 border-b border-orange-200"><span>Surface to Paint:</span> <strong>${sqft} sq ft</strong></div>
+            <div class="flex justify-between py-1.5 border-b border-orange-200"><span>Gallons Needed:</span> <strong>${gallons} Gallon(s)</strong></div>
+            <div class="flex justify-between py-1.5 font-bold text-orange-700"><span>Estimated Cost:</span> <strong>$${(gallons * vals.p_gal_cost).toFixed(2)}</strong></div>
           `;
         }
       },
-
-      // 8. Tile Calculator
       tile: {
-        title: "Floor & Wall Tile Takeoff Calculator",
-        desc: "Calculates tile units, packaging boxes, thinset mortar, and grout weight by layout pattern.",
-        icon: '<i class="fa-solid fa-table-cells-large text-teal-500"></i>',
+        title: "Tile Calculator",
+        icon: '<i class="fa-solid fa-table-cells-large text-lg"></i>',
         inputs: [
-          { id: 't_len', label: 'Room Length (ft)', type: 'number', step: '0.25', default: '14' },
-          { id: 't_wid', label: 'Room Width (ft)', type: 'number', step: '0.25', default: '10' },
-          { id: 't_size', label: 'Tile Dimensions (inches)', type: 'select', default: '12x24', options: [
-            { label: '12" x 24" Large Format', value: '12x24' },
-            { label: '12" x 12" Standard', value: '12x12' },
-            { label: '24" x 24" XL Porcelain', value: '24x24' },
-            { label: '6" x 24" Wood Plank', value: '6x24' },
-            { label: '4" x 12" Subway Tile', value: '4x12' },
-            { label: '3" x 6" Classic Subway', value: '3x6' }
-          ]},
-          { id: 't_pattern', label: 'Layout Pattern & Waste', type: 'select', default: '10', options: [
-            { label: 'Standard Straight Grid (+10% waste)', value: '10' },
-            { label: 'Offset / Running Bond (+12% waste)', value: '12' },
-            { label: 'Diagonal 45° (+15% waste)', value: '15' },
-            { label: 'Herringbone (+18% waste)', value: '18' }
-          ]},
-          { id: 't_box_sqft', label: 'Coverage per Box (sq ft)', type: 'number', step: '0.5', default: '16' },
-          { id: 't_cost_sqft', label: 'Tile Cost per Sq. Ft. ($)', type: 'number', step: '0.25', default: '4.50' }
+          { id: 't_area', label: 'Floor Area (sq ft)', type: 'number', default: '140' },
+          { id: 't_size', label: 'Tile Dimension (inches)', type: 'number', default: '12' },
+          { id: 't_box_cost', label: 'Cost per Box ($)', type: 'number', default: '34' }
         ],
-        calc: (v) => {
-          const area = v.t_len * v.t_wid;
-          const wasteFactor = 1 + (v.t_pattern / 100);
-          const totalAreaWithWaste = area * wasteFactor;
-
-          const dims = v.t_size.split('x').map(Number);
-          const tileAreaSqFt = (dims[0] * dims[1]) / 144;
-          const tilesNeeded = Math.ceil(totalAreaWithWaste / tileAreaSqFt);
-          const boxesNeeded = Math.ceil(totalAreaWithWaste / v.t_box_sqft);
-          const tileCost = totalAreaWithWaste * v.t_cost_sqft;
-
-          // 50-lb bag of modified thinset covers ~65 sq ft with 1/2" trowel
-          const thinsetBags = Math.ceil(totalAreaWithWaste / 65);
-          // Grout: approx 1 lb per 10-15 sq ft depending on joint
-          const groutLbs = Math.ceil(totalAreaWithWaste / 12);
-
+        calc: (vals) => {
+          const tileArea = (vals.t_size * vals.t_size) / 144;
+          const tilesNeeded = Math.ceil((vals.t_area / tileArea) * 1.1);
+          const boxes = Math.ceil(tilesNeeded / 10);
           return `
-            <div class="grid grid-cols-2 gap-3 mb-2">
-              <div class="bg-white p-3 rounded-xl border border-orange-200">
-                <span class="text-xs text-slate-500 font-bold uppercase block">Boxes to Order</span>
-                <span class="text-xl font-black text-teal-600">${boxesNeeded} Boxes</span>
-                <span class="text-xs text-slate-400 block">${tilesNeeded} individual tiles</span>
-              </div>
-              <div class="bg-white p-3 rounded-xl border border-orange-200">
-                <span class="text-xs text-slate-500 font-bold uppercase block">Material Cost</span>
-                <span class="text-xl font-black text-slate-900">$${tileCost.toFixed(2)}</span>
-                <span class="text-xs text-slate-400 block">@ $${v.t_cost_sqft}/sq ft</span>
-              </div>
-            </div>
-            <div class="space-y-1 text-xs sm:text-sm">
-              <div class="flex justify-between py-1 border-b border-orange-100">
-                <span>Room Floor Area:</span>
-                <strong>${area.toFixed(1)} sq ft (+${v.t_pattern}% = ${totalAreaWithWaste.toFixed(1)} sq ft)</strong>
-              </div>
-              <div class="flex justify-between py-1 border-b border-orange-100">
-                <span>Mortar Thinset (50lb bags):</span>
-                <strong>${thinsetBags} Bags</strong>
-              </div>
-              <div class="flex justify-between py-1 text-slate-600">
-                <span>Estimated Grout Required:</span>
-                <strong>~${groutLbs} lbs (1-2 bags)</strong>
-              </div>
-            </div>
+            <div class="flex justify-between py-1.5 border-b border-orange-200"><span>Total Tiles (incl. 10% waste):</span> <strong>${tilesNeeded} tiles</strong></div>
+            <div class="flex justify-between py-1.5 border-b border-orange-200"><span>Boxes (approx 10/box):</span> <strong>${boxes} boxes</strong></div>
+            <div class="flex justify-between py-1.5 font-bold text-orange-700"><span>Est. Tiles Cost:</span> <strong>$${(boxes * vals.t_box_cost).toFixed(2)}</strong></div>
           `;
         }
       },
-
-      // 9. Roofing Calculator
       roofing: {
-        title: "Roofing Pitch & Shingle Calculator",
-        desc: "Converts flat building footprint into sloped pitch roof squares, bundles, and underlayment.",
-        icon: '<i class="fa-solid fa-house-chimney text-orange-600"></i>',
+        title: "Roofing Materials Calculator",
+        icon: '<i class="fa-solid fa-house-chimney text-lg"></i>',
         inputs: [
-          { id: 'r_len', label: 'Building Footprint Length (ft)', type: 'number', step: '1', default: '50' },
-          { id: 'r_wid', label: 'Building Footprint Width (ft)', type: 'number', step: '1', default: '32' },
-          { id: 'r_pitch', label: 'Roof Pitch', type: 'select', default: '1.118', options: [
-            { label: '3/12 Low Slope (Factor: 1.031)', value: '1.031' },
-            { label: '4/12 Standard Pitch (Factor: 1.054)', value: '1.054' },
-            { label: '6/12 Common Gable (Factor: 1.118)', value: '1.118' },
-            { label: '8/12 Moderate Steep (Factor: 1.202)', value: '1.202' },
-            { label: '10/12 Steep Slope (Factor: 1.302)', value: '1.302' },
-            { label: '12/12 45° Pitch (Factor: 1.414)', value: '1.414' }
-          ]},
-          { id: 'r_overhang', label: 'Eave / Overhang (inches)', type: 'number', step: '2', default: '12' },
-          { id: 'r_waste', label: 'Waste Allowance (%)', type: 'select', default: '10', options: [
-            { label: '10% (Simple Gable)', value: '10' },
-            { label: '15% (Hip Roof / Valleys)', value: '15' },
-            { label: '20% (Complex Dormers)', value: '20' }
-          ]},
-          { id: 'r_bundle_cost', label: 'Cost per Shingle Bundle ($)', type: 'number', step: '1', default: '38' }
+          { id: 'r_area', label: 'Footprint Area (sq ft)', type: 'number', default: '1800' },
+          { id: 'r_pitch', label: 'Pitch Multiplier (e.g. 1.15)', type: 'number', default: '1.15' },
+          { id: 'r_bun_cost', label: 'Bundle Price ($)', type: 'number', default: '38' }
         ],
-        calc: (v) => {
-          const overhangFt = (v.r_overhang / 12) * 2;
-          const adjustedLen = v.r_len + overhangFt;
-          const adjustedWid = v.r_wid + overhangFt;
-          const flatArea = adjustedLen * adjustedWid;
-          const pitchFactor = parseFloat(v.r_pitch);
-          const trueSurfaceArea = flatArea * pitchFactor;
-          const wasteFactor = 1 + (v.r_waste / 100);
-          const totalAreaWithWaste = trueSurfaceArea * wasteFactor;
-
-          const squares = totalAreaWithWaste / 100;
-          const bundles = Math.ceil(squares * 3); // 3 bundles per square
-          const underlaymentRolls = Math.ceil(squares / 4); // 4 squares per standard roll (400 sq ft)
-          const totalShingleCost = bundles * v.r_bundle_cost;
-
+        calc: (vals) => {
+          const totalArea = vals.r_area * vals.r_pitch;
+          const squares = (totalArea / 100).toFixed(1);
+          const bundles = Math.ceil(squares * 3);
           return `
-            <div class="grid grid-cols-2 gap-3 mb-2">
-              <div class="bg-white p-3 rounded-xl border border-orange-200">
-                <span class="text-xs text-slate-500 font-bold uppercase block">Roofing Squares</span>
-                <span class="text-xl font-black text-orange-600">${squares.toFixed(1)} Squares</span>
-                <span class="text-xs text-slate-400 block">${Math.round(totalAreaWithWaste)} sq ft total</span>
-              </div>
-              <div class="bg-white p-3 rounded-xl border border-orange-200">
-                <span class="text-xs text-slate-500 font-bold uppercase block">Shingle Bundles</span>
-                <span class="text-xl font-black text-slate-900">${bundles} Bundles</span>
-                <span class="text-xs text-slate-400 block">$${totalShingleCost.toFixed(2)} (@ $${v.r_bundle_cost}/ea)</span>
-              </div>
-            </div>
-            <div class="space-y-1 text-xs sm:text-sm">
-              <div class="flex justify-between py-1 border-b border-orange-100">
-                <span>Underlayment Felt (4-sq rolls):</span>
-                <strong>${underlaymentRolls} Rolls</strong>
-              </div>
-              <div class="flex justify-between py-1 border-b border-orange-100">
-                <span>Roofing Nails (approx):</span>
-                <strong>~${Math.ceil(squares * 320)} Nails (1-2 boxes)</strong>
-              </div>
-              <div class="flex justify-between py-1 text-slate-600">
-                <span>Pitch Multiplier:</span>
-                <strong>x${pitchFactor.toFixed(3)} (+${v.r_waste}% waste included)</strong>
-              </div>
-            </div>
+            <div class="flex justify-between py-1.5 border-b border-orange-200"><span>Roofing Squares:</span> <strong>${squares} squares (${Math.round(totalArea)} sq ft)</strong></div>
+            <div class="flex justify-between py-1.5 border-b border-orange-200"><span>Shingle Bundles (3/sq):</span> <strong>${bundles} bundles</strong></div>
+            <div class="flex justify-between py-1.5 font-bold text-orange-700"><span>Shingle Cost:</span> <strong>$${(bundles * vals.r_bun_cost).toFixed(2)}</strong></div>
           `;
         }
       },
-
-      // 10. Stair Calculator
       stair: {
-        title: "Stair Stringer & Code Compliance Calculator",
-        desc: "Computes total risers, exact step height, total stringer run, and IBC building code comfort checks.",
-        icon: '<i class="fa-solid fa-stairs text-amber-700"></i>',
+        title: "Stair Calculator",
+        icon: '<i class="fa-solid fa-stairs text-lg"></i>',
         inputs: [
-          { id: 'st_rise', label: 'Total Rise / Floor-to-Floor Height (inches)', type: 'number', step: '0.25', default: '108' },
-          { id: 'st_ideal_rise', label: 'Target Riser Height (ideal ~7.5")', type: 'number', step: '0.1', default: '7.5' },
-          { id: 'st_tread', label: 'Tread Run Depth (inches)', type: 'number', step: '0.25', default: '10.5' },
-          { id: 'st_stringers', label: 'Number of Stringers', type: 'select', default: '3', options: [
-            { label: '2 Stringers (Narrow < 32" wide)', value: '2' },
-            { label: '3 Stringers (Standard 36" stair)', value: '3' },
-            { label: '4 Stringers (Heavy duty / 48" wide)', value: '4' }
-          ]}
+          { id: 'st_rise', label: 'Total Rise / Height (inches)', type: 'number', default: '108' },
+          { id: 'st_ideal', label: 'Target Step Rise (inches)', type: 'number', default: '7.5' }
         ],
-        calc: (v) => {
-          const totalRise = v.st_rise;
-          const risersCount = Math.round(totalRise / v.st_ideal_rise);
-          const exactRiserHeight = totalRise / risersCount;
-          const treadsCount = risersCount - 1;
-          const totalRunInches = treadsCount * v.st_tread;
-          const totalRunFeet = totalRunInches / 12;
-
-          // Stringer hypotenuse
-          const stringerLengthInches = Math.sqrt(Math.pow(totalRise, 2) + Math.pow(totalRunInches, 2));
-          const stringerBoardFeet = Math.ceil(stringerLengthInches / 12);
-
-          // IBC Code check: 2R + T rule (comfort standard is 24" to 25")
-          const blondelFormula = (2 * exactRiserHeight) + v.st_tread;
-          const isCompliant = exactRiserHeight <= 7.75 && v.st_tread >= 10.0;
-          const comfortRating = (blondelFormula >= 24 && blondelFormula <= 25.5) ? 'Ideal Comfort' : 'Acceptable';
-
+        calc: (vals) => {
+          const steps = Math.round(vals.st_rise / vals.st_ideal);
+          const exactRiser = (vals.st_rise / steps).toFixed(2);
+          const totalRun = ((steps - 1) * 10.5) / 12;
           return `
-            <div class="grid grid-cols-2 gap-3 mb-2">
-              <div class="bg-white p-3 rounded-xl border border-orange-200">
-                <span class="text-xs text-slate-500 font-bold uppercase block">Riser Height</span>
-                <span class="text-xl font-black text-amber-700">${exactRiserHeight.toFixed(2)}"</span>
-                <span class="text-xs text-slate-400 block">${risersCount} risers total</span>
-              </div>
-              <div class="bg-white p-3 rounded-xl border border-orange-200">
-                <span class="text-xs text-slate-500 font-bold uppercase block">Total Stair Run</span>
-                <span class="text-xl font-black text-slate-900">${totalRunFeet.toFixed(2)} ft</span>
-                <span class="text-xs text-slate-400 block">${totalRunInches.toFixed(0)}" length</span>
-              </div>
-            </div>
-            <div class="space-y-1 text-xs sm:text-sm">
-              <div class="flex justify-between py-1 border-b border-orange-100">
-                <span>Number of Treads:</span>
-                <strong>${treadsCount} Treads (@ ${v.st_tread}" depth)</strong>
-              </div>
-              <div class="flex justify-between py-1 border-b border-orange-100">
-                <span>Stringer 2x12 Lumber:</span>
-                <strong>${v.st_stringers} boards @ ${stringerBoardFeet} ft length</strong>
-              </div>
-              <div class="flex justify-between py-1">
-                <span>IBC Code Compliance:</span>
-                <strong class="${isCompliant ? 'text-emerald-600' : 'text-amber-600'}">
-                  ${isCompliant ? '✓ Passes IBC Standards' : '⚠ Check local codes (>7.75")'} (${comfortRating})
-                </strong>
-              </div>
-            </div>
+            <div class="flex justify-between py-1.5 border-b border-orange-200"><span>Total Risers:</span> <strong>${steps} steps</strong></div>
+            <div class="flex justify-between py-1.5 border-b border-orange-200"><span>Exact Individual Riser:</span> <strong>${exactRiser} inches</strong></div>
+            <div class="flex justify-between py-1.5 font-bold text-orange-700"><span>Total Stair Run:</span> <strong>${totalRun.toFixed(1)} feet</strong></div>
           `;
         }
       },
-
-      // 11. Rebar Calculator
       rebar: {
-        title: "Reinforced Rebar Grid & Lap-Splice Calculator",
-        desc: "Estimate total rebar linear footage, 20-ft sticks, tie-wire, and steel tonnage.",
-        icon: '<i class="fa-solid fa-bars-staggered text-blue-600"></i>',
+        title: "Rebar Calculator",
+        icon: '<i class="fa-solid fa-bars-staggered text-lg"></i>',
         inputs: [
-          { id: 'rb_len', label: 'Slab / Footing Length (ft)', type: 'number', step: '0.5', default: '30' },
-          { id: 'rb_wid', label: 'Width (ft)', type: 'number', step: '0.5', default: '20' },
-          { id: 'rb_size', label: 'Bar Size (ASTM)', type: 'select', default: '4', options: [
-            { label: '#3 Rebar (3/8" dia - 0.376 lbs/ft)', value: '3' },
-            { label: '#4 Rebar (1/2" dia - 0.668 lbs/ft)', value: '4' },
-            { label: '#5 Rebar (5/8" dia - 1.043 lbs/ft)', value: '5' },
-            { label: '#6 Rebar (3/4" dia - 1.502 lbs/ft)', value: '6' }
-          ]},
-          { id: 'rb_spacing', label: 'Grid Spacing (OC)', type: 'select', default: '18', options: [
-            { label: '12" On Center (Heavy duty)', value: '12' },
-            { label: '16" On Center (Standard foundation)', value: '16' },
-            { label: '18" On Center (Driveways/Patios)', value: '18' },
-            { label: '24" On Center (Light slab)', value: '24' }
-          ]},
-          { id: 'rb_cover', label: 'Edge Clearance / Cover (inches)', type: 'number', step: '0.5', default: '3' },
-          { id: 'rb_waste', label: 'Lap Splice & Waste (%)', type: 'select', default: '12', options: [
-            { label: '10% (Minimal splices)', value: '10' },
-            { label: '12% (Standard lap splice)', value: '12' },
-            { label: '15% (Frequent cuts & bends)', value: '15' }
-          ]}
+          { id: 'rb_len', label: 'Slab Length (ft)', type: 'number', default: '30' },
+          { id: 'rb_wid', label: 'Slab Width (ft)', type: 'number', default: '20' },
+          { id: 'rb_spacing', label: 'Grid Spacing (inches)', type: 'number', default: '18' }
         ],
-        calc: (v) => {
-          const edgeFt = (v.rb_cover / 12) * 2;
-          const netLen = Math.max(1, v.rb_len - edgeFt);
-          const netWid = Math.max(1, v.rb_wid - edgeFt);
-          const spacingFt = v.rb_spacing / 12;
-
-          const numLengthRuns = Math.floor(netWid / spacingFt) + 1;
-          const numWidthRuns = Math.floor(netLen / spacingFt) + 1;
-
-          const rawLinearFt = (numLengthRuns * netLen) + (numWidthRuns * netWid);
-          const wasteFactor = 1 + (v.rb_waste / 100);
-          const totalLinearFt = Math.ceil(rawLinearFt * wasteFactor);
-
-          const sticks20ft = Math.ceil(totalLinearFt / 20);
-
-          let unitWeight = 0.668; // #4
-          if (v.rb_size === '3') unitWeight = 0.376;
-          if (v.rb_size === '5') unitWeight = 1.043;
-          if (v.rb_size === '6') unitWeight = 1.502;
-
-          const totalWeightLbs = totalLinearFt * unitWeight;
-          const totalTons = totalWeightLbs / 2000;
-          const intersections = numLengthRuns * numWidthRuns;
-          const tieWireRolls = Math.ceil(intersections / 400);
-
+        calc: (vals) => {
+          const gridFt = vals.rb_spacing / 12;
+          const numX = Math.ceil(vals.rb_wid / gridFt) + 1;
+          const numY = Math.ceil(vals.rb_len / gridFt) + 1;
+          const totalLinearFt = Math.round((numX * vals.rb_len) + (numY * vals.rb_wid));
+          const bars20ft = Math.ceil(totalLinearFt / 20);
           return `
-            <div class="grid grid-cols-2 gap-3 mb-2">
-              <div class="bg-white p-3 rounded-xl border border-orange-200">
-                <span class="text-xs text-slate-500 font-bold uppercase block">20-Ft Rebar Sticks</span>
-                <span class="text-xl font-black text-blue-600">${sticks20ft} Sticks</span>
-                <span class="text-xs text-slate-400 block">${totalLinearFt} linear feet</span>
-              </div>
-              <div class="bg-white p-3 rounded-xl border border-orange-200">
-                <span class="text-xs text-slate-500 font-bold uppercase block">Steel Weight</span>
-                <span class="text-xl font-black text-slate-900">${Math.round(totalWeightLbs)} lbs</span>
-                <span class="text-xs text-slate-400 block">${totalTons.toFixed(2)} US Tons</span>
-              </div>
-            </div>
-            <div class="space-y-1 text-xs sm:text-sm">
-              <div class="flex justify-between py-1 border-b border-orange-100">
-                <span>Grid Configuration:</span>
-                <strong>${v.rb_spacing}" OC (#${v.rb_size} rebar)</strong>
-              </div>
-              <div class="flex justify-between py-1 border-b border-orange-100">
-                <span>Tie Wire (3.5lb rolls):</span>
-                <strong>${tieWireRolls} Rolls (${intersections} intersections)</strong>
-              </div>
-              <div class="flex justify-between py-1 text-slate-600">
-                <span>Lap Splice Allowance:</span>
-                <strong>+${v.rb_waste}% included</strong>
-              </div>
-            </div>
+            <div class="flex justify-between py-1.5 border-b border-orange-200"><span>Total Linear Rebar:</span> <strong>${totalLinearFt} ft</strong></div>
+            <div class="flex justify-between py-1.5 border-b border-orange-200"><span>20-ft Rebar Sticks (#4):</span> <strong>${bars20ft} sticks</strong></div>
+            <div class="flex justify-between py-1.5 font-bold text-orange-700"><span>Approximate Weight:</span> <strong>${Math.round(totalLinearFt * 0.668)} lbs</strong></div>
           `;
         }
       },
-
-      // 12. Fence Calculator
       fence: {
-        title: "Perimeter Privacy & Picket Fence Calculator",
-        desc: "Calculates posts, 2x4 rails, pickets, gate allowances, and concrete post hole bags.",
-        icon: '<i class="fa-solid fa-bars text-amber-700"></i>',
+        title: "Fence Calculator",
+        icon: '<i class="fa-solid fa-bars text-lg"></i>',
         inputs: [
-          { id: 'f_len', label: 'Total Fence Run / Perimeter (ft)', type: 'number', step: '1', default: '150' },
-          { id: 'f_hgt', label: 'Fence Height', type: 'select', default: '6', options: [
-            { label: '6 Foot Standard Privacy', value: '6' },
-            { label: '4 Foot Picket Fence', value: '4' },
-            { label: '8 Foot High Privacy', value: '8' }
-          ]},
-          { id: 'f_post_space', label: 'Post Spacing (ft)', type: 'select', default: '8', options: [
-            { label: '8 Feet On Center (Standard)', value: '8' },
-            { label: '6 Feet On Center (High wind regions)', value: '6' }
-          ]},
-          { id: 'f_picket_w', label: 'Picket Width & Style', type: 'select', default: '5.5', options: [
-            { label: '5.5" (Standard 1x6 Dog-ear)', value: '5.5' },
-            { label: '3.5" (Traditional 1x4 Picket)', value: '3.5' }
-          ]},
-          { id: 'f_rails', label: 'Horizontal Rails per Section', type: 'select', default: '3', options: [
-            { label: '3 Rails (Recommended for 6ft+)', value: '3' },
-            { label: '2 Rails (Suitable for 4ft)', value: '2' }
-          ]},
-          { id: 'f_gates', label: 'Number of Gates (walkway/drive)', type: 'number', step: '1', default: '1' }
+          { id: 'f_length', label: 'Fence Run (linear ft)', type: 'number', default: '120' },
+          { id: 'f_post_space', label: 'Post Spacing (ft)', type: 'number', default: '8' },
+          { id: 'f_picket_w', label: 'Picket Width (inches)', type: 'number', default: '5.5' }
         ],
-        calc: (v) => {
-          const sections = Math.ceil(v.f_len / v.f_post_space);
-          const totalPosts = sections + 1 + (v.f_gates * 1); // Extra gate post
-          const railsCount = sections * v.f_rails;
-          
-          // Picket gap is approx 1/8" to 1/4" for wood shrinkage
-          const effectivePicketWidth = parseFloat(v.f_picket_w) + 0.125;
-          const totalPickets = Math.ceil(((v.f_len - (v.f_gates * 4)) * 12) / effectivePicketWidth);
-          // 1.5 bags of 60lb concrete per standard post hole
-          const concreteBags = Math.ceil(totalPosts * 1.5);
-          const fastenersCount = totalPickets * (v.f_rails * 2);
-
+        calc: (vals) => {
+          const posts = Math.ceil(vals.f_length / vals.f_post_space) + 1;
+          const pickets = Math.ceil((vals.f_length * 12) / vals.f_picket_w);
+          const rails = Math.ceil(vals.f_length / 8) * 3;
           return `
-            <div class="grid grid-cols-2 gap-3 mb-2">
-              <div class="bg-white p-3 rounded-xl border border-orange-200">
-                <span class="text-xs text-slate-500 font-bold uppercase block">4x4 Posts Needed</span>
-                <span class="text-xl font-black text-amber-700">${totalPosts} Posts</span>
-                <span class="text-xs text-slate-400 block">${sections} fence sections</span>
-              </div>
-              <div class="bg-white p-3 rounded-xl border border-orange-200">
-                <span class="text-xs text-slate-500 font-bold uppercase block">Pickets / Boards</span>
-                <span class="text-xl font-black text-slate-900">${totalPickets} Pickets</span>
-                <span class="text-xs text-slate-400 block">${v.f_picket_w}" dog-ear boards</span>
-              </div>
-            </div>
-            <div class="space-y-1 text-xs sm:text-sm">
-              <div class="flex justify-between py-1 border-b border-orange-100">
-                <span>Horizontal 2x4 Rails:</span>
-                <strong>${railsCount} Rails (${v.f_rails} per section)</strong>
-              </div>
-              <div class="flex justify-between py-1 border-b border-orange-100">
-                <span>Fast-Setting Concrete (60lb bags):</span>
-                <strong>${concreteBags} Bags (1.5 bags/post)</strong>
-              </div>
-              <div class="flex justify-between py-1 text-slate-600">
-                <span>Exterior Screws / Nails:</span>
-                <strong>~${Math.ceil(fastenersCount * 1.05)} Fasteners (1 box 5-lb)</strong>
-              </div>
-            </div>
+            <div class="flex justify-between py-1.5 border-b border-orange-200"><span>Posts (4x4):</span> <strong>${posts} posts</strong></div>
+            <div class="flex justify-between py-1.5 border-b border-orange-200"><span>Pickets:</span> <strong>${pickets} pickets</strong></div>
+            <div class="flex justify-between py-1.5 font-bold text-orange-700"><span>Horizontal 2x4 Rails:</span> <strong>${rails} rails</strong></div>
           `;
         }
       }
     };
 
-    /* -------------------------------------------------------------
-       4. MODAL CONTROLLER & EVENT WIRING
-       ------------------------------------------------------------- */
-    let currentCalcKey = 'concrete';
+    let activeCalcKey = 'concrete';
 
     function openModal(calcKey) {
-      const engine = calculatorEngines[calcKey];
-      if (!engine) return;
+      const config = calculatorConfigs[calcKey] || calculatorConfigs['concrete'];
+      activeCalcKey = calcKey;
 
-      currentCalcKey = calcKey;
+      document.getElementById('modal-title').textContent = config.title;
+      document.getElementById('modal-icon-badge').innerHTML = config.icon;
+      
+      const inputsContainer = document.getElementById('modal-inputs');
+      inputsContainer.innerHTML = '';
 
-      // Update header
-      document.getElementById('modal-title').textContent = engine.title;
-      document.getElementById('modal-desc').textContent = engine.desc;
-      document.getElementById('modal-icon-badge').innerHTML = engine.icon;
-
-      // Build inputs
-      const container = document.getElementById('modal-inputs');
-      container.innerHTML = '';
-
-      engine.inputs.forEach(input => {
-        const wrap = document.createElement('div');
-        if (input.spanFull) wrap.className = 'sm:col-span-2';
-
-        const label = document.createElement('label');
-        label.className = 'custom-label';
-        label.setAttribute('for', input.id);
-        label.textContent = input.label;
-
-        let field;
-        if (input.type === 'select') {
-          field = document.createElement('select');
-          field.id = input.id;
-          field.className = 'custom-input cursor-pointer';
-          input.options.forEach(opt => {
-            const option = document.createElement('option');
-            option.value = opt.value;
-            option.textContent = opt.label;
-            if (opt.value === input.default) option.selected = true;
-            field.appendChild(option);
-          });
-        } else {
-          field = document.createElement('input');
-          field.type = input.type || 'number';
-          field.id = input.id;
-          field.value = input.default || '';
-          if (input.step) field.step = input.step;
-          field.className = 'custom-input';
-        }
-
-        // Live calculation as user types or toggles
-        field.addEventListener('input', calculateModalResult);
-        field.addEventListener('change', calculateModalResult);
-
-        wrap.appendChild(label);
-        wrap.appendChild(field);
-        container.appendChild(wrap);
+      config.inputs.forEach(input => {
+        const div = document.createElement('div');
+        div.innerHTML = `
+          <label class="block text-xs sm:text-sm font-bold text-slate-700 mb-1.5">${input.label}</label>
+          <input 
+            type="${input.type}" 
+            id="${input.id}" 
+            value="${input.default}" 
+            class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-base focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 font-semibold text-slate-800 transition"
+          >
+        `;
+        inputsContainer.appendChild(div);
       });
 
       calculateModalResult();
 
-      // Show modal
       const modal = document.getElementById('calculator-modal');
       modal.classList.remove('hidden');
       document.body.style.overflow = 'hidden';
     }
 
     function calculateModalResult() {
-      const engine = calculatorEngines[currentCalcKey];
-      if (!engine) return;
+      const config = calculatorConfigs[activeCalcKey];
+      if (!config) return;
 
       const vals = {};
-      engine.inputs.forEach(inp => {
-        const el = document.getElementById(inp.id);
-        if (el) {
-          if (inp.type === 'select') {
-            vals[inp.id] = el.value;
-          } else {
-            vals[inp.id] = parseFloat(el.value) || 0;
-          }
-        }
+      config.inputs.forEach(input => {
+        const el = document.getElementById(input.id);
+        vals[input.id] = el ? parseFloat(el.value) || 0 : 0;
       });
 
-      const outputHtml = engine.calc(vals);
-      document.getElementById('calc-result-content').innerHTML = outputHtml;
-      
-      const now = new Date();
-      document.getElementById('calc-timestamp').textContent = `Updated ${now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`;
+      const resultHtml = config.calc(vals);
+      const resContainer = document.getElementById('calc-result-content');
+      resContainer.innerHTML = resultHtml;
     }
 
     function closeModal() {
-      const modal = document.getElementById('calculator-modal');
-      modal.classList.add('hidden');
+      document.getElementById('calculator-modal').classList.add('hidden');
       document.body.style.overflow = 'auto';
     }
 
-    // Quick copy takeoff summary to clipboard
-    function copyResultsToClipboard() {
-      const engine = calculatorEngines[currentCalcKey];
-      const resultElem = document.getElementById('calc-result-content');
-      if (!resultElem) return;
-
-      const plainText = `${engine.title} Takeoff Summary:\n` + resultElem.innerText;
-
-      // Safe fallback copy
-      const tempTextArea = document.createElement('textarea');
-      tempTextArea.value = plainText;
-      tempTextArea.style.position = 'fixed';
-      tempTextArea.style.left = '-9999px';
-      document.body.appendChild(tempTextArea);
-      tempTextArea.select();
-      
-      try {
-        document.execCommand('copy');
-        const copyBtn = document.getElementById('copy-result-btn');
-        const originalHtml = copyBtn.innerHTML;
-        copyBtn.innerHTML = '<i class="fa-solid fa-check text-emerald-600"></i> <span class="text-emerald-700">Copied!</span>';
-        setTimeout(() => {
-          copyBtn.innerHTML = originalHtml;
-        }, 1800);
-      } catch (err) {
-        console.error('Copy failed:', err);
-      }
-      document.body.removeChild(tempTextArea);
-    }
-
-    // Modal listeners
     window.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeModal();
     });
